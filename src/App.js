@@ -1,14 +1,16 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Page from "./components/Page_content";
-
+import { Col, Container, Row } from "react-bootstrap";
+import Header from "./components/Header/Header";
+import Point from "./components/Points/Point";
 
 function App() {
 	return (
 		<main>
+			{/* header */}
 			<Header />
-			<Page />
-			<Footer />
+			{/* Points */}
+			<Point />
+
+
 		</main>
 	)
 }
