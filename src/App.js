@@ -1,17 +1,17 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Point from "./components/Points/Point";
+import Points from "./components/Points/Points";
 
 function App() {
 	return (
-		<main>
-			{/* header */}
-			<Header />
-			{/* Points */}
-			<Point />
-
-
-		</main>
+		<BrowserRouter>
+			<main>
+				{/* header */}
+				<Header />
+				{/* Points */}
+				<Points />
+			</main>
+		</BrowserRouter>
 	)
 }
 

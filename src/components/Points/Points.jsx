@@ -1,10 +1,13 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import Sidebar from './../Sidebar/Sidebar';
+import { Route, Routes } from 'react-router-dom';
+import Sidebar from './Sidebar/Sidebar';
+// POINTS 
+import Dialogs from './Dialogs/Dialogs';
 import Profile from './Profile/Profile';
 
 
 
-const Point = () => {
+const Points = () => {
 	return (
 		<section className="app app-wrapper">
 			<Container>
@@ -16,7 +19,10 @@ const Point = () => {
 
 					{/* Points */}
 					<Col md={10}>
-						<Profile />
+						<Routes>
+							<Route path="/profile/" element={<Profile />} />
+							<Route path="/dialogs/*" element={<Dialogs />} />
+						</Routes> 
 					</Col>
 
 				</Row>
@@ -25,4 +31,4 @@ const Point = () => {
 	)
 }
 
-export default Point;
+export default Points;
