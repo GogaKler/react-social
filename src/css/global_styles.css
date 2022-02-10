@@ -1,10 +1,12 @@
 :root{
 	--accent-color: #20232a;
+	--accent-rgba-opac005: rgba(255, 99, 90, 0.05);
 	--accent-colorLight: #282c34;
 	--accent-colorVeryLight: #b1b1b1;
 	--accent-colorText: #ff6363;
 	--dark-light: #6d6d6d;
 	--transintion: 0.40s ease-out;
+	--black-rgba: rgba(6, 6, 6, 0.3);
 
 }
 *{
@@ -35,6 +37,17 @@ main{
 	background-color: #f5f5f5;
 	height: 300vh;
 }
+
+.point__dialogs--content{
+	background-color: var(--accent-rgba-opac005);
+	padding: 20px;
+	padding-top: 0;
+	border: 1px solid var(--black-rgba);
+	border-top: 0;
+	border-radius: 20px;
+}
+
+
 
 .button{
 	padding: 5px 10px;
