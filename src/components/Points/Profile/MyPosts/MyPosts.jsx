@@ -1,4 +1,4 @@
-const My_posts = () => {
+const MyPosts = () => {
 	return (
 		<div className="my_posts">
 			<div className="my_posts__title">Мои посты</div>
@@ -9,4 +9,4 @@ const My_posts = () => {
 		</div>
 	)
 }
-export default My_posts;
+export default MyPosts;

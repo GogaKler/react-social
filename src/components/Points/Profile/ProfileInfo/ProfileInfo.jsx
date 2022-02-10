@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 
-const Profile_info = () => {
+const ProfileInfo = () => {
 	return (
 		<div className="profile">
 			<Row>
@@ -28,4 +28,4 @@ const Profile_info = () => {
 	)
 }
 
-export default Profile_info;
+export default ProfileInfo;

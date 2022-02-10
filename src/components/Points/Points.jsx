@@ -7,7 +7,7 @@ import Profile from './Profile/Profile';
 
 
 
-const Points = () => {
+const Points = (props) => {
 	return (
 		<section className="app app-wrapper">
 			<Container>
@@ -19,10 +19,12 @@ const Points = () => {
 
 					{/* Points */}
 					<Col md={10}>
-						<Routes>
-							<Route path="/profile/" element={<Profile />} />
-							<Route path="/dialogs/*" element={<Dialogs />} />
-						</Routes> 
+						<div className='point'>
+							<Routes>
+								<Route path="/profile/" element={<Profile PostData={props.PostData} />} />
+								<Route path="/dialogs/*" element={<Dialogs DialogsItemData={props.DialogsItemData} MessagesData={props.MessagesData} />} />
+							</Routes>
+						</div>
 					</Col>
 
 				</Row>
