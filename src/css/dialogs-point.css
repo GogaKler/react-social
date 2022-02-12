@@ -71,3 +71,18 @@
 .message__text{
 	padding-left: 5px	;
 }
+
+.myWrite-message{
+	padding: 15px 5px;
+	margin: 15px;
+	border: 3px solid var(--accent-colorVeryLight);
+}
+.myWrite-message textarea{
+	margin: 10px 0;
+	padding-left: 10px;
+	width: 100%;
+}
+.send-message{
+	display: flex;
+	justify-content: flex-end;
+}

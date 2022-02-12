@@ -1,26 +1,38 @@
 // Point-Profile
 import './../../../css/profile-point.css';
-
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import MyPosts from "./MyPosts/MyPosts";
-import Post from "./Post/Post";
+import { Container } from 'react-bootstrap';
+import ProfileHeader from './ProfileHeader/ProfileHeader';
+import ProfileNavbar from './ProfileNavbar/ProfileNavbar';
+import CurrentUser from './CurrentUser/CurrentUser';
+import MyPosts from './MyPosts/MyPosts';
 
 
 const Profile = (props) => {
-	let PostElements = props.PostData.map ( el => <Post name={el.name} post__title={el.post__title} post__desc={el.post__desc} />)
+
+
 
 	return (
 		<div className="point__profile">
-			{/* profile */}
-			<ProfileInfo />
+			<div className="profile">
 
-			{/* My_posts */}
-			<MyPosts />
+				<ProfileHeader />
 
-			{/* posts */}
-			{PostElements}
+				<div className="profile__content">
+					<ProfileNavbar />
+					
+					<Container>
+						<div className='profile__info-block'>
+							<CurrentUser addPost = {props.addPost} />	
+							<MyPosts data={props.data}/>
+						</div>
+					</Container>
+				</div>
 
-		</div>
+			</div>
+			{/* <ProfileInfo />
+			<MyPosts__textarea />
+			{PostElements} */}
+		</div >
 	)
 }
 
