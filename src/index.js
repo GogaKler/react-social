@@ -1,20 +1,35 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 // css 
 import './css/global_styles.css';
-import state, { addPost } from './redux/state'
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
-import ReactDOM from 'react-dom';
+
+// Redux
+import store from "./redux/redux-store";
+
+//Libraries
+import { BrowserRouter } from "react-router-dom";
+
+// Main Component
 import App from './App';
 
 
-
-export let renderFunc = () => {
+// Объявление переменной Ре-Рендера, где state - параметр
+let rerenderState = (state) => {
 	ReactDOM.render(
-		<App
-			state={state} addPost={addPost}
-		/>,
-		document.getElementById('root')
+		<BrowserRouter>
+			<App
+				state={state} 
+				dispatch={store.dispatch.bind(store)}
+			/>
+		</BrowserRouter>, document.getElementById('root')
 	);
 }
+// Вызов функции Ре-Рендер. По сути state = store.getState()
+rerenderState(store.getState());
 
-renderFunc();
+// Передаем CallBack в store. observer = Ре-Рендер
+store.subscribe(rerenderState);
+
+

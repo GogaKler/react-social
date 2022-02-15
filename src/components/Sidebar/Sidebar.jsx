@@ -15,9 +15,9 @@ const Sidebar = () => {
 						<div className="text sidebar__header-text">
 							React <span>Social</span>
 						</div>
-						<div className="sidebar__header--arrow">
+						{/* <div className="sidebar__header--arrow">
 							<i className="bi bi-chevron-right sidebar__toggle"></i>
-						</div>
+						</div> */}
 					</div>
 				</div>
 				<div className="sidebar__bar">

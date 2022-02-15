@@ -1,11 +1,8 @@
-import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header/Header";
 import Points from "./components/Points/Points";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 function App(props) {
 	return (
-		<BrowserRouter>
 			<main>
 				{/* header */}
 				{/* <Header /> */}
@@ -16,11 +13,10 @@ function App(props) {
 				{/* Points */}
 				<Points 
 					state = {props.state}
-					addPost = {props.addPost}
+					dispatch={props.dispatch}
 				/>
 
 			</main>
-		</BrowserRouter>
 	)
 }
 
