@@ -1,4 +1,4 @@
-import ChatFooter from "./ChatFooter/ChatFooter";
+import ChatFooterContainer from "./ChatFooter/ChatFooterContainer";
 import ChatHeader from "./ChatHeader/ChatHeader";
 import MessageList from "./MessageList/MessageList";
 
@@ -9,11 +9,11 @@ const Chat = (props) => {
 			<ChatHeader />
 
 			<MessageList 
-			Messages = {props.dialogsData.Messages}
+			Messages = {props.store.getState().dialogs.Messages}
 			/>
 
-			<ChatFooter dispatch={props.dispatch}
-			Messages = {props.dialogsData.Messages}
+			<ChatFooterContainer 
+			store = {props.store}
 			/>
 
 		</div>

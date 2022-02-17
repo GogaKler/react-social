@@ -2,7 +2,7 @@ import Menu from "./Menu/Menu";
 import Post from "./Post/Post";
 
 const MyPosts = (props) => {
-	let PostElements = props.data.PostData.map(el =>
+	let PostElements = props.store.getState().profile.PostData.map(el =>
 		<Post
 			firstName={el.firstName}
 			lastName={el.lastName}

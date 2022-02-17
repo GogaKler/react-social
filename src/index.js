@@ -5,7 +5,7 @@ import './css/global_styles.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 
-// Redux
+// Redux - store
 import store from "./redux/redux-store";
 
 //Libraries
@@ -16,13 +16,10 @@ import App from './App';
 
 
 // Объявление переменной Ре-Рендера, где state - параметр
-let rerenderState = (state) => {
+let rerenderState = () => {
 	ReactDOM.render(
 		<BrowserRouter>
-			<App
-				state={state} 
-				dispatch={store.dispatch.bind(store)}
-			/>
+			<App store={store} />
 		</BrowserRouter>, document.getElementById('root')
 	);
 }
@@ -30,6 +27,6 @@ let rerenderState = (state) => {
 rerenderState(store.getState());
 
 // Передаем CallBack в store. observer = Ре-Рендер
-store.subscribe(rerenderState);
+store.subscribe(() => { rerenderState(store.getState()) });
 
 

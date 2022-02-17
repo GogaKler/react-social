@@ -3,8 +3,8 @@ import './../../../css/profile-point.css';
 import { Container } from 'react-bootstrap';
 import ProfileHeader from './ProfileHeader/ProfileHeader';
 import ProfileNavbar from './ProfileNavbar/ProfileNavbar';
-import CurrentUser from './CurrentUser/CurrentUser';
 import MyPosts from './MyPosts/MyPosts';
+import CurrentUserContainer from './CurrentUser/CurrentUserContainer';
 
 
 const Profile = (props) => {
@@ -18,12 +18,8 @@ const Profile = (props) => {
 
 					<Container>
 						<div className='profile__info-block'>
-							<CurrentUser
-								NewPostTitle={props.data.NewPostTitle}
-								NewPostDesc={props.data.NewPostDesc}
-								dispatch={props.dispatch}
-							/>
-							<MyPosts data={props.data} />
+							<CurrentUserContainer store = {props.store}/>
+							<MyPosts store = {props.store} />
 						</div>
 					</Container>
 				</div>

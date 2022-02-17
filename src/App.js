@@ -11,10 +11,7 @@ function App(props) {
 				<Sidebar />
 
 				{/* Points */}
-				<Points 
-					state = {props.state}
-					dispatch={props.dispatch}
-				/>
+				<Points store={props.store} />
 
 			</main>
 	)

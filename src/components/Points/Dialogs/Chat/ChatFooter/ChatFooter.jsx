@@ -1,19 +1,16 @@
 import React from "react";
-import { addMessageCreator, updateNewMessageTextCreator } from "../../../../../redux/diialogs_reducer";
 
 const ChatFooter = (props) => {
 
 	let NewMessageElement = React.createRef();
 
 	let addMessage = () => {
-		props.dispatch(addMessageCreator());
+		props.addMessage();
 	}
 
 	let onChangeMessage = () => {
 		let newMessage = NewMessageElement.current.value;
-
-		props.dispatch(updateNewMessageTextCreator(newMessage))
-		console.log(updateNewMessageTextCreator(newMessage))
+		props.onChangeMessage(newMessage);
 	}
 
 
@@ -31,7 +28,7 @@ const ChatFooter = (props) => {
 							<div className='message-input'>
 								<textarea 
 								ref = {NewMessageElement}
-								value = {props.Messages.MessageText}
+								value = {props.MessageText}
 								onChange = {onChangeMessage}
 								placeholder='Сообщение'
 								></textarea>

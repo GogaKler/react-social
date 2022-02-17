@@ -1,7 +1,7 @@
 // store -> Объект
 // action -> это объект у которого есть свойство type
 
-import DialogsReducer from "./diialogs_reducer";
+import DialogsReducer from "./dialogs_reducer";
 import ProfileReducer from "./profile_reducer";
 
 let store = {
@@ -18,15 +18,12 @@ let store = {
 		},
 		dialogs: {
 			Messages:{
-				FirstMessages: [
-					 
-				],
+				FirstMessages: [],
 				LastMessages: [
 					{id: '1', text: 'Салам Алейкум, брат, как дела?', time: '10:00'}
 				],
 				MessageText: '',
 			},
-
 		},
 	},
 	// Методы
