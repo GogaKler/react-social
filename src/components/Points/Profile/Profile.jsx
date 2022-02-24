@@ -8,6 +8,7 @@ import CurrentUserContainer from './CurrentUser/CurrentUserContainer';
 
 
 const Profile = (props) => {
+
 	return (
 		<div className="point__profile">
 			<div className="profile">
@@ -18,7 +19,7 @@ const Profile = (props) => {
 
 					<Container>
 						<div className='profile__info-block'>
-							<CurrentUserContainer store = {props.store}/>
+							<CurrentUserContainer />
 							<MyPosts store = {props.store} />
 						</div>
 					</Container>

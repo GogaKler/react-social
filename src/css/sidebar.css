@@ -43,6 +43,7 @@
 	left: 0;
 	transition: var(--transintion);
 	z-index: 100;
+	border-right: 1px solid var(--accent-colorText50);
 }
 .sidebar__header{
 	position: relative;
@@ -74,7 +75,8 @@
 	font-weight: 400;
 	color: var(--accent-colorText);
 	cursor: pointer;
-	transition: var(--transintion);
+	transition:  1s ease-out;;
+	white-space: nowrap;
 }
 .sidebar__header-text span{
 	font-weight: 300;
@@ -87,7 +89,7 @@
 	position: absolute;
 	cursor: pointer;
 	font-size: 14px;
-	bottom: 20px;
+	bottom: 10px;
 	right: -10px;
 	color: #fff;
 	width: 22px;
@@ -120,7 +122,13 @@
 	color: rgb(228, 228, 228);
 	transition: var(--transintion);
 }
-.sidebar-menu__link:hover{
+.sidebar-menu__link.active{
+	background-color: var(--accent-colorText);
+	color: #fff;
+	cursor: default;
+}
+
+.sidebar-menu__link:hover:not(.active){
 	background-color: rgba(228, 228, 228, 0.1);
 	color: rgb(228, 228, 228);
 }

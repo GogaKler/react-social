@@ -10,26 +10,33 @@ let initalState = {
 }
 
 const ProfileReducer = (state = initalState, action) => {
-	switch(action.type) {
-		case ADD_POST:
-			let newPost = {
-				id: "4",
-				firstName: "Егор",
-				lastName: "Колесников",
-				date: "28 фев.",
-				likesCount: "0",
-				commentsCount: "0",
-				postTitle: state.NewPostTitle,
-				postDesc: state.NewPostDesc,
-			}
-			state.PostData.push(newPost);
-			state.NewPostTitle = '';
-			state.NewPostDesc = '';
-			return state;
+
+	switch (action.type) {
+		case ADD_POST:	
+			return {
+				...state,
+				PostData: [
+					{
+						id: "4",
+						firstName: "Егор",
+						lastName: "Колесников",
+						date: "28 фев.",
+						likesCount: "0",
+						commentsCount: "0",
+						postTitle: state.NewPostTitle,
+						postDesc: state.NewPostDesc,
+					},
+				...state.PostData],
+				NewPostTitle: '',
+				NewPostDesc: '',
+			};
+
 		case UPDATE_NEW_POST_TEXT:
-			state.NewPostTitle = action.NewPostTitle;
-			state.NewPostDesc = action.NewPostDesc;
-			return state;
+			return {
+				...state,		
+				NewPostTitle: action.NewPostTitle,
+				NewPostDesc: action.NewPostDesc
+			}
 		default:
 			return state
 	}

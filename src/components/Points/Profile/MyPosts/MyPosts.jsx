@@ -11,6 +11,7 @@ const MyPosts = (props) => {
 			postDesc={el.postDesc}
 			likesCount={el.likesCount}
 			commentsCount={el.commentsCount}
+			key = {el.id}
 		/>)
 
 	return (

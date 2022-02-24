@@ -1,0 +1,127 @@
+:root{
+	--dark-theme-light: #212121;
+	--dark-theme-dark: #181818;
+
+	--accent-color: #20232a;
+	--accent-rgba-opac005: rgba(255, 99, 90, 0.05);
+	--accent-colorLight: #282c34;
+	--accent-colorVeryLight: #b1b1b1;
+	--accent-colorText: #ff6363;
+	--dark-light: #6d6d6d;
+	--transintion: 0.40s ease-out;
+	--transintion-fast: 0.2s ease-out;
+	--black-rgba: rgba(6, 6, 6, 0.3);
+}
+
+.point__users{
+	color: #fff;
+}
+.users__main-content{
+	padding: 20px 0;
+}
+/*users__header*/
+.users-header{
+	padding: 20px 0;
+}
+.users-middle{
+	margin-bottom: 20px;
+}
+.users-middle__title{
+	font-size: 30px;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid var(--accent-colorText50);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.pagination{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.pagination span{
+	cursor: pointer;
+	margin-right: 5px;
+	font-size: 18px;
+}
+.pagination__selected{
+	cursor: crosshair;
+	font-weight: 600;
+	padding: 3px;
+	border-radius: 5px;
+	background-color: var(--accent-colorText50);
+}
+/*user*/
+.users-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.user-wrapper{
+	width: 45%;
+	padding: 10px 15px;
+	border: 2px solid var(--accent-colorLight);
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+.user{
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.user-image{
+	width: 50px;
+	height: 50px;
+}
+.user-image img{
+	border-radius: 6px;
+}
+.user-info{
+	margin-left: 15px;
+}
+.user-fullName{
+	font-weight: 600;
+	font-size: 25px;
+	color: #fff;
+	margin-bottom: 2px;
+}
+.user-status{
+	color: #a5a5a5;
+	margin-left: 2px;
+}
+.user-location{
+	display: flex;
+	font-size: 16px;
+	color: #a5a5a5;
+}
+.user-country{
+	margin-right: 10px;
+}
+/*actionAC*/
+.user-follow{
+	margin-top: auto;
+	margin-left: auto;
+}
+.user-follow .button{
+	cursor: default;
+}
+/*buttons*/
+.user-follow__button-subscribe{
+	font-weight: 600;
+	background-color: lightgreen;
+}
+.user-follow__button-subscribe:hover{
+	font-weight: 600;
+	background-color: green;
+}
+.user-follow__button-unSubscribe{
+	font-weight: 600;
+	color: #fff;
+	background-color: var(--dark-light);
+}
+.user-follow__button-unSubscribe:hover{
+	color: #fff;
+	background-color: var(--dark-light);
+}

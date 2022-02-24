@@ -75,6 +75,47 @@ main{
 	background-color: #ff9563;
 }
 
+/*search*/
+.search{
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 0 15px;
+	margin: 0 10px;
+	background-color: #2c2c2c;
+	border-radius: 30px;
+}
+.search input{
+	width: 100%;
+	color: #fff;
+	font-size: 14px;
+	padding: 12px 0;
+	background: none;
+	outline: none;
+	border: none;
+}
+.search i {
+	width: 20px;
+	height: 20px;
+}
+.search .icon-search{
+	color: var(--dark-light);
+	margin-right: 20px;
+}
+.search .icon-submit{
+	font-size: 18px;
+	color: var(--dark-light);
+	padding: 4px;
+	transition: var(--transintion);
+	border-radius: 5px;
+	cursor: pointer;
+}
+.search .icon-submit:hover{
+	color: #fff;
+	background-color: var(--accent-colorText);
+	border-radius: 20px;
+}
+
 
 
 

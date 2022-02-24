@@ -7,9 +7,9 @@ const DialogsList = () => {
 			<div className='dialogs__DropDownMenu'>
 				<i className="bi bi-list dialogs__toggle"></i>
 			</div>
-			<div className="dialogs__search">
+			<div className="search dialogs__search">
+				<i className="icon-search bi bi-search"></i>
 				<input type="search" placeholder="Поиск.."></input>
-				<i className="bi bi-search"></i>
 			</div>
 		</div>
 
@@ -30,11 +30,6 @@ const DialogsList = () => {
 					</div>
 				</div>
 			</div>
-			<CurrentUserDialog />
-			<CurrentUserDialog />
-			<CurrentUserDialog />
-			<CurrentUserDialog />
-			<CurrentUserDialog />
 			<CurrentUserDialog />
 		</div>
 	</div>

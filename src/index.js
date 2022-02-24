@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap-grid.min.css';
 // Redux - store
 import store from "./redux/redux-store";
 
+import { Provider } from 'react-redux';
+
 //Libraries
 import { BrowserRouter } from "react-router-dom";
 
@@ -19,12 +21,14 @@ import App from './App';
 let rerenderState = () => {
 	ReactDOM.render(
 		<BrowserRouter>
-			<App store={store} />
+			<Provider store = {store} >
+				<App store = {store} />
+			</Provider>
 		</BrowserRouter>, document.getElementById('root')
 	);
 }
 // Вызов функции Ре-Рендер. По сути state = store.getState()
-rerenderState(store.getState());
+rerenderState();
 
 // Передаем CallBack в store. observer = Ре-Рендер
 store.subscribe(() => { rerenderState(store.getState()) });

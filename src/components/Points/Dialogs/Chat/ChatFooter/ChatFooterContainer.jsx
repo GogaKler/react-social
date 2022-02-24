@@ -1,30 +1,25 @@
-import React from "react";
+import { connect } from "react-redux";
 import { addMessageCreator, updateNewMessageTextCreator } from "../../../../../redux/dialogs_reducer";
 import ChatFooter from "./ChatFooter";
 
-const ChatFooterContainer = (props) => {
 
-	let state = props.store.getState().dialogs;
-
-	let addMessage = () => {
-		let action = addMessageCreator()
-
-		props.store.dispatch(action);
+let mapStateToProps = (state) => {
+	return {
+		MessageText: state.dialogs.Messages.MessageText,
 	}
-
-	let onChangeMessage = (newMessage) => {
-		let action = updateNewMessageTextCreator(newMessage)
-		props.store.dispatch(action)
-	}
-
-
-	return (
-		<ChatFooter 
-			addMessage = {addMessage}
-			onChangeMessage = {onChangeMessage}
-			MessageText = {state.Messages.MessageText}
-		/>
-	)
 }
+
+let mapDispatchToProps = (dispatch) => {
+	return {
+		addMessage: () => {
+			dispatch(addMessageCreator())
+		},
+		onChangeMessage: (newMessage) => {
+			dispatch(updateNewMessageTextCreator(newMessage))
+		},
+	}
+}
+
+const ChatFooterContainer = connect(mapStateToProps, mapDispatchToProps)(ChatFooter);
 
 export default ChatFooterContainer;

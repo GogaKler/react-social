@@ -66,29 +66,9 @@
 }
 
 .dialogs__search{
-	display: flex;
-	align-items: center;
-	position: relative;
-	padding: 10px 10px 10px 40px;
-	margin-left: 10px;
 	width: 100%;
-	background-color: #2c2c2c;
-	border-radius: 30px;
 }
-.dialogs__search input{
-	width: 100%;
-	color: #fff;
-	font-size: 14px;
-	background: none;
-	outline: none;
-	border: none;
-}
-.dialogs__search i{
-	position: absolute;
-	color: var(--dark-light);
-	left: 12px;
-	top: 8px;
-}
+
 
 /* DIALOGS FOLDERS */
 .dialogs__folders{

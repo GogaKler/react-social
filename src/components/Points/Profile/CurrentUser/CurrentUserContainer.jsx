@@ -1,29 +1,25 @@
-import React from "react";
 import { addPostActionCreator, updateNewPostTextActionCreator } from "../../../../redux/profile_reducer";
+import { connect } from 'react-redux'
 import CurrentUser from './CurrentUser'
 
-const CurrentUserContainer = (props) => {
-	let state = props.store.getState().profile;
-
-	let addPost = () => {
-		let action = addPostActionCreator();
-		props.store.dispatch(action);
+let mapStateToProps = (state) => {
+	return {
+		NewPostTitle: state.profile.NewPostTitle,
+		NewPostDesc: state.profile.NewPostDesc,
 	}
+};
 
-	let onChangePost = (newPostTitle, newPostDesc) => {
-		let action = updateNewPostTextActionCreator(newPostTitle, newPostDesc);
-		props.store.dispatch(action);
+let mapDispatchToProps = (dispatch) => {
+	return {
+		addPost: () => {
+			dispatch(addPostActionCreator())
+		},
+		onChangePost: (newPostTitle, newPostDesc) => {
+			dispatch(updateNewPostTextActionCreator(newPostTitle, newPostDesc))
+		},
 	}
+};
 
-
-	return (
-		<CurrentUser 
-			onChangePost = {onChangePost}
-			addPost = {addPost}
-			NewPostTitle = {state.NewPostTitle}
-			NewPostDesc = {state.NewPostDesc}
-		/>
-	)
-}
+const CurrentUserContainer = connect(mapStateToProps, mapDispatchToProps)(CurrentUser);
 
 export default CurrentUserContainer;

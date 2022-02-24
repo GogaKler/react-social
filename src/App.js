@@ -1,5 +1,5 @@
 import Points from "./components/Points/Points";
-import Sidebar from "./components/Sidebar/Sidebar";
+import { SidebarContainer } from "./components/Sidebar/SidebarContainer";
 
 function App(props) {
 	return (
@@ -8,7 +8,7 @@ function App(props) {
 				{/* <Header /> */}
 
 				{/* sidebar */}
-				<Sidebar />
+				<SidebarContainer />
 
 				{/* Points */}
 				<Points store={props.store} />

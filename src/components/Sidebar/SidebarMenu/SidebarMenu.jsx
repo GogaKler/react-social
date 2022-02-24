@@ -5,7 +5,7 @@ const SidebarMenu = () => {
 			<ul className="sidebar-menu">
 				<li className="sidebar-menu__item">
 					<NavLink to="/profile" className="sidebar-menu__link">
-						<i className="bi bi-person-fill"></i>
+						<i className="bi bi-house-door-fill"></i>
 						<span className="text sidebar-menu__text">Профиль</span>
 					</NavLink>
 				</li>
@@ -17,8 +17,14 @@ const SidebarMenu = () => {
 				</li>
 				<li className="sidebar-menu__item">
 					<NavLink to="/friends" className="sidebar-menu__link">
-						<i className="bi bi-people-fill"></i>
+						<i className="bi bi-person-fill"></i>
 						<span className="text sidebar-menu__text">Друзья</span>
+					</NavLink>
+				</li>
+				<li className="sidebar-menu__item">
+					<NavLink to="/users" className="sidebar-menu__link">
+						<i className="bi bi-people-fill"></i>
+						<span className="text sidebar-menu__text">Пользователи</span>
 					</NavLink>
 				</li>
 				<li className="sidebar-menu__item">
