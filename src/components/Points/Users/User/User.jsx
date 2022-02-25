@@ -23,8 +23,8 @@ const User = (props) => {
 
 					<div className="user-follow">
 						{props.followed
-							? <button onClick={() => props.follow(props.id)} className="button user-follow__button-unSubscribe">Удалить из друзей</button>
-							: <button onClick={() => props.follow(props.id)} className="button user-follow__button-subscribe">Добавить в друзья</button>}
+							? <button onClick={() => props.userFollow(props.id)} className="button user-follow__button-unSubscribe">Удалить из друзей</button>
+							: <button onClick={() => props.userFollow(props.id)} className="button user-follow__button-subscribe">Добавить в друзья</button>}
 					</div>
 				</div>
 			</div>

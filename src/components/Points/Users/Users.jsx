@@ -15,7 +15,7 @@ const Users = (props) => {
 			status={el.status}
 			followed={el.followed}
 			// dispatch
-			follow={props.follow}
+			userFollow={props.userFollow}
 		/>
 	)
 

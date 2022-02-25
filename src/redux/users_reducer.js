@@ -43,11 +43,11 @@ const UsersReducer = (state = initalState, action) => {
 	}
 }
 
-export const UserFollowAC = (userId) => ({ type: USER_FOLLOW, userId });
-export const setUsersAC = (users) => ({ type: SET_USERS, users });
-export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
-export const setTotalUsersCountAC = (totalCount) => ({ type: SET_TOTAL_USERS_COUNT, totalCount });
-export const preloaderIsFetchingAC = (isFetching) => ({ type: PRELOADER_IS_FETCHING, isFetching });
+export const userFollow = (userId) => ({ type: USER_FOLLOW, userId });
+export const setUsers = (users) => ({ type: SET_USERS, users });
+export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage });
+export const setTotalUsersCount = (totalCount) => ({ type: SET_TOTAL_USERS_COUNT, totalCount });
+export const preloaderIsFetching = (isFetching) => ({ type: PRELOADER_IS_FETCHING, isFetching });
 
 
 export default UsersReducer;
