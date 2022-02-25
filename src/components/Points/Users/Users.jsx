@@ -1,60 +1,46 @@
 import User from './User/User'
 import '../../../css/users-point.css'
 import { Container } from 'react-bootstrap'
-import React from 'react';
-import * as axios from 'axios'
+import { PreloaderGhost } from '../../common/Preloaders/Preloaders'
 
-class Users extends React.Component {
+const Users = (props) => {
 
-	componentDidMount() {
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
-			this.props.setUsers(response.data.items)
-			this.props.setTotalUsersCount(response.data.totalCount)
-		});
-	}
-	onPageChanged = (pageNumber) => {
-		this.props.setCurrentPage(pageNumber);
-		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`).then(response => {
-			this.props.setUsers(response.data.items)
-		});
-	}
-
-	render() { 
-
-		let UserElements = this.props.Users.map(el =>
-			<User 
-			key={el.id} 
-			id={el.id} 
-			name={el.name} 
-			photosSmall={el.photos.small} 
-			photosLarge={el.photos.large} 
-			status={el.status} 
-			followed={el.followed} 
+	let userElements = props.Users.map(el =>
+		<User
+			key={el.id}
+			id={el.id}
+			name={el.name}
+			photosSmall={el.photos.small}
+			photosLarge={el.photos.large}
+			status={el.status}
+			followed={el.followed}
 			// dispatch
-			follow={this.props.follow}
-			/>
-		)
-		let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-		let pages = [];	
+			follow={props.follow}
+		/>
+	)
 
-		for (let i=1; i <= pagesCount; i++) {
-			if (pages.length < 10){
-				pages.push(i);
-			}
+	let pages = []; // массив цифр в пагинации
+
+	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize); // высчитываем количество нужных цифр
+
+	for (let i = 1; i <= pagesCount; i++) { // перебор тех самых цифр
+		if (pages.length < 10) { // условие, чтобы не было много цифр
+			pages.push(i);
 		}
+	}
 
-		let pagesElements = pages.map(p => {
-			return(
-				<span 
-					key={p} 
-					className={this.props.currentPage === p ? "pagination__selected" : undefined}
-					onClick = {() => {this.onPageChanged(p)}} 
-				>{p}</span>
-			)
-		})
-
+	let pagesElements = pages.map(p => { // пагинация
 		return (
-			<div className='point__users'>
+			<span
+				key={p}
+				className={props.currentPage === p ? "pagination__selected" : undefined}
+				onClick={() => { props.onPageChanged(p) }}
+			>{p}</span>
+		)
+	})
+	
+	return (
+		<div className='point__users'>
 			<Container>
 				<div className='users__main-content'>
 					<div className='users-header'>
@@ -72,18 +58,21 @@ class Users extends React.Component {
 									{pagesElements}
 								</div>
 							</div>
+
+							{props.isFetching ? <PreloaderGhost /> : null} {/* preloader */}
+
 							<div className="users-wrapper">
-								{UserElements}
+								{userElements}
 							</div>
-							
+
 
 						</div>
 					</div>
 				</div>
 			</Container>
 		</div>
-		);
-	}
+	);
+
 }
- 
+
 export default Users;

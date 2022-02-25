@@ -47,7 +47,8 @@
 	font-size: 18px;
 }
 .pagination__selected{
-	cursor: crosshair;
+	pointer-events: none;
+	cursor: default;
 	font-weight: 600;
 	padding: 3px;
 	border-radius: 5px;
