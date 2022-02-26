@@ -6,7 +6,6 @@ import * as axios from 'axios'
 
 class UsersContainer extends React.Component {
 
-
 	componentDidMount() {
 		this.props.preloaderIsFetching(true);
 		axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {

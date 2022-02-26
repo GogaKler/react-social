@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 // POINTS 
-import Dialogs from './Dialogs/Dialogs';
-import Profile from './Profile/Profile';
+import Dialogs from './Dialogs/Dialogs';	
+import ProfileContainer from './Profile/ProfileContainer';
 import UsersContainer from './Users/UsersContainer';
 
 
@@ -13,11 +13,11 @@ const Points = (props) => {
 
 		<section className="point" >
 			<Routes>
-				<Route path="/profile/"
-					element={<Profile store={props.store} />}
+				<Route path="/profile/*"
+					element={<ProfileContainer />}
 				/>
 
-				<Route path="/dialogs/*" 
+				<Route path="/dialogs/" 
 				element={<Dialogs store={props.store} />} 
 				/>
 
