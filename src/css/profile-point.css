@@ -92,14 +92,15 @@
 .currentUser__FirstName-LastName{
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	font-weight: 600;
-	font-size: 25px;
-	margin-bottom: 2px;
+	font-size: 24px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .currentUser__FirstName-LastName i{
 	color: green;
 	margin-top: 5px;
-	margin-left: 15px;
 	font-size: 12px;
 }
 

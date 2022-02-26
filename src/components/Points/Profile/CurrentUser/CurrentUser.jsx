@@ -1,16 +1,12 @@
-import { PreloaderGhost } from "../../../common/Preloaders/Preloaders";
+import userPhoto from '../../../../assets/images/user.jpg'
 
 const CurrentUser = (props) => {
-
-	if(!props.userProfile) {
-		return <PreloaderGhost />
-	}
 
 	return (
 		
 		<div className='currentUser-sendPost'>
 			<div className='currentUser__img--profile'>
-				<img className="currentUser__img" src={props.userProfile.photos.large} alt="" />	
+				<img className="currentUser__img" src={!props.userProfile.photos.large ? userPhoto : props.userProfile.photos.large} alt="" />	
 			</div>
 			<div className='currentUser__FirstName-LastName'>
 				<span className='currentUser-FirstName'>{props.userProfile.fullName}</span>

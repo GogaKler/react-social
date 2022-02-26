@@ -62,6 +62,21 @@ main{
 	/* padding-top: 30px; */
 	margin-left: 60px;
 }
+.loadingPage{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transintion);
+	height: 100vh;
+}
+.loadingPage__text{
+	font-size: 20px;
+	color: #fff;
+	margin-left: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
 
 .button{
 	padding: 5px 10px;

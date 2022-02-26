@@ -5,9 +5,20 @@ import ProfileHeader from './ProfileHeader/ProfileHeader';
 import ProfileNavbar from './ProfileNavbar/ProfileNavbar';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import CurrentUser from './CurrentUser/CurrentUser';
+import { PreloaderGhost } from '../../common/Preloaders/Preloaders';
 
 
 const Profile = (props) => {
+
+	if(!props.userProfile) {
+		return (
+			<div className="loadingPage">
+				<PreloaderGhost />
+				<div className="loadingPage__text">Загрузка...</div>
+			</div>
+		)
+	}
+
 	return (
 		<div className="point__profile">
 			<div className="profile">
