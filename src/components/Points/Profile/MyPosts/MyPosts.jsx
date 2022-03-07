@@ -15,26 +15,30 @@ const MyPosts = (props) => {
 			key={el.id}
 		/>)
 
-		let NewPostElementTitle = React.createRef();
-		let NewPostElementDesc = React.createRef();
-	
-		let addPost = () => {
-			props.addPost();
-		}
-	
-		let onChangePost = () => {
-			let newPostTitle = NewPostElementTitle.current.value;
-			let newPostDesc = NewPostElementDesc.current.value;
-	
-			props.updateNewPostText(newPostTitle, newPostDesc)
-		}
+	let NewPostElementTitle = React.createRef();
+	let NewPostElementDesc = React.createRef();
+
+	let addPost = () => {
+		props.addPost();
+	}
+
+	let onChangePost = () => {
+		let newPostTitle = NewPostElementTitle.current.value;
+		let newPostDesc = NewPostElementDesc.current.value;
+
+		props.updateNewPostText(newPostTitle, newPostDesc)
+	}
 
 	return (
 
 		<div className='myPosts'>
-				<div className="sendPost">
-				<div className='sendPost__title'>Что у вас нового?</div>
-
+			<Menu />
+			<div className="sendPost">
+				<div className='sendPost__title'>
+					<p>Что у вас нового?</p>
+					<button onClick={addPost} className='sendPost__button button'>Опубликовать</button>
+				</div>
+				
 				<textarea
 					onChange={onChangePost}
 					ref={NewPostElementTitle}
@@ -43,7 +47,7 @@ const MyPosts = (props) => {
 					placeholder='Введите название поста...'
 				>
 				</textarea>
-
+				
 				<textarea
 					onChange={onChangePost}
 					ref={NewPostElementDesc}
@@ -53,16 +57,10 @@ const MyPosts = (props) => {
 					rows="2">
 				</textarea>
 
-				<div className="sendPost__send">
-					<button
-						onClick={addPost}
-						className='sendPost__button button'
-					>
-						Опубликовать
-					</button>
-				</div>
+				{/* <div className="sendPost__send">
+					<button onClick={addPost} className='sendPost__button button'>Опубликовать</button>
+				</div> */}
 			</div>
-			<Menu />
 			{PostElements}
 		</div>
 	)

@@ -1,7 +1,7 @@
 const SET_TOOGLE_MENU = "SET_TOOGLE_MENU"
 
 let initalState = {
-	sidebarToggle: false
+	sidebarToggle: true
 }
 
 const SidebarReducer = (state = initalState, action) => {

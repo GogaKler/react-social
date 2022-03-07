@@ -14,7 +14,7 @@
 }
 
 /*sidebar close*/
-.sidebar.close{
+/* .sidebar.close{
 	width: 60px;
 }
 .sidebar.close .text{
@@ -32,13 +32,43 @@
 .sidebar.close .sidebar__toggle{
 	width: 20px;
 	height: 20px;
+} 
+.sidebar.close .auth-user__name{
+	display: none;
 }
+.sidebar.close .auth-user i{
+display: none;
+}
+*/
+
+/* sidebarHover */
+.sidebar:hover{
+	width: 250px;
+}
+.sidebar:hover .text{
+	opacity: 1;
+	width: 50%;
+	overflow: visible;
+	transition: var(--transintion);
+}
+.sidebar:hover .sidebar-menu__link{
+	padding-left: 20px;
+}
+.sidebar:hover .sidebar__search input{
+	opacity: 1;
+	width: 70%
+}
+.sidebar:hover .auth-user i{
+	display: block;
+}
+
+
 /*main flex*/
 .sidebar{
 	position: fixed;
-	background-color: #212121;
+	background-color: #2121218c;
 	height: 100vh;
-	width: 250px;
+	width: 60px;
 	top: 0;
 	left: 0;
 	transition: var(--transintion);
@@ -55,8 +85,11 @@
 	padding: 0 10px;
 }
 .sidebar .text{
-	transition: var(--transintion);
+	transition: var(--transintion-fast);
 	white-space: nowrap;
+	opacity: 0;
+	width: 0;
+	overflow: hidden;
 }
 .sidebar-content__wrapper{
 	position: relative;
@@ -122,7 +155,7 @@
 .sidebar-menu__link{
 	display: flex;
 	align-items: center;
-	padding-left: 20px;
+	padding-left: 6px;
 	height: 100%;
 	width: 100%;
 	color: rgb(228, 228, 228);
@@ -150,9 +183,6 @@
 	font-weight: 500;
 	transition: var(--transintion);
 }
-.sidebar-menu__text:hover{
-	color: var(--accent-colorText);
-}
 
 
 .sidebar__search{
@@ -173,12 +203,14 @@
 }
 .sidebar__search input{
 	height: 60%;
-	width: 70%;
+	width: 0%;
+	overflow: hidden;
 	outline: none;
 	border: none;
 	border-radius: 15px;
 	padding-left: 10px ;
 	background-color: var(--accent-colorVeryLight);
+	opacity: 0;
 }
 
 .sidebar-menu__login{
@@ -220,6 +252,7 @@
 .auth-user__images-wrapper{
 	width: 50px;
 	height: 50px;
+	transition: var(--transintion);
 }
 .auth-user__name{
 	color: #fff;
@@ -232,10 +265,5 @@
 	background-color: var(--accent-colorText);
 	padding: 0 10px;
 	border-radius: 20px;
-}
-.sidebar.close .auth-user__name{
-	display: none;
-}
-.sidebar.close .auth-user i{
 	display: none;
 }

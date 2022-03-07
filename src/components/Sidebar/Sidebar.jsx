@@ -17,9 +17,6 @@ const Sidebar = (props) => {
 						<div className="text sidebar__header-text">
 							React <span>Social</span>
 						</div>
-						<div className="sidebar__header--arrow">
-							<i onClick={props.SetToggleMenu} className="bi bi-chevron-right sidebar__toggle"></i>
-						</div>
 					</div>
 				</div>
 				<li className="sidebar__search">
@@ -43,37 +40,15 @@ const Sidebar = (props) => {
 								<img src={photoUser} className="currentUser__img" alt="avatar" />
 							</div>
 							<p className="auth-user__name text">{props.login}</p>
-							<i className="bi bi-chevron-down text"></i>
+							<i className="bi bi-chevron-down"></i>
 						</div></>
-					:
+					: 
 					<li className="sidebar-menu__login sidebar-menu__login-undefiend">
 						<NavLink to="/login" className="sidebar-menu__link login-block">
 							<i className="login-block__verefic-undefiend bi bi-patch-exclamation"></i>
-							<span className="sidebar-menu__text text">Войдите в систему</span>
+							<span className="text sidebar-menu__text">Войдите в систему</span>
 						</NavLink>
 					</li>}
-
-				{/* <li className="sidebar-menu__login">
-					<NavLink to="/login" className="sidebar-menu__link login-block">
-						{props.isAuth
-							? <>
-								<i className="login-block__verefic-free bi bi-patch-check"></i>
-								<span className="sidebar-menu__text text">Вы успешно вошли</span>
-							</>
-							: <>
-								<i className="login-block__verefic-undefiend bi bi-patch-exclamation"></i>
-								<span className="sidebar-menu__text text">Войдите в систему</span>
-							</>}
-					</NavLink>
-				</li>
-				<div className="auth-user">
-					<div className="auth-user__images-wrapper">
-						<img src={photoUser} className="currentUser__img" alt="avatar" />
-					</div>
-					<p className="auth-user__name text">{props.login}</p>
-					<i className="bi bi-chevron-down text"></i>
-				</div> */}
-
 			</div>
 		</div>
 	)

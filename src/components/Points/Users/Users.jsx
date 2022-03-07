@@ -25,7 +25,7 @@ const Users = (props) => {
 
 	for (let i = 1; i <= pagesCount; i++) { // перебор тех самых цифр
 		if (pages.length < 10) { // условие, чтобы не было много цифр
-			pages.push(i);
+			pages.push(i); // пуш цифр
 		}
 	}
 
