@@ -54,9 +54,8 @@ export const updateNewPostText = (newPostTitle, newPostDesc) => ({ type: UPDATE_
 export const setUserProfle = (profile) =>({type: SET_USER_PROFILE, profile}) ;
 
 // Thunks
-export const getUserProfile = (match) => {
+export const getUserProfile = (userId) => {
 	return (dispatch) => {
-		let userId = match ? match.params.userId : 22553
 		profileApi.getUserProfile(userId).then(data => {
 			dispatch(setUserProfle(data));
 		});	

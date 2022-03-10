@@ -2,9 +2,12 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 // POINTS 
 import Dialogs from './Dialogs/Dialogs';	
+import Login from './Login/Login';
 import ProfileContainer from './Profile/ProfileContainer';
 import UsersContainer from './Users/UsersContainer';
-
+// css
+import './../../css/profile-point.css'
+import './../../css/login-point.css'
 
 
 const Points = (props) => {
@@ -23,6 +26,10 @@ const Points = (props) => {
 
 				<Route path="/users/" 
 				element={<UsersContainer />}
+				/>
+
+				<Route path="/login/" 
+				element={<Login />}
 				/>
 
 			</Routes>

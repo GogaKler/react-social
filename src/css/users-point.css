@@ -106,7 +106,7 @@
 	margin-left: auto;
 }
 .user-follow .button{
-	cursor: default;
+	/* cursor: default; */
 }
 /*buttons*/
 .user-follow__button-subscribe{
@@ -124,5 +124,5 @@
 }
 .user-follow__button-unSubscribe:hover{
 	color: #fff;
-	background-color: var(--dark-light);
+	background-color: lightcoral;
 }

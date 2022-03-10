@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { useMatch } from "react-router-dom";
+import { Navigate, useMatch } from "react-router-dom";
 import Profile from "./Profile";
 import { getUserProfile, setUserProfle } from "../../../redux/profile_reducer";
 
@@ -8,10 +8,12 @@ import { getUserProfile, setUserProfle } from "../../../redux/profile_reducer";
 class ProfileContainer extends React.Component {
 	
 		componentDidMount() {
-			this.props.getUserProfile(this.props.match)
+			let userId = this.props.match ? this.props.match.params.userId : 22553
+			this.props.getUserProfile(userId)
 		}
 
-	render() { 
+	render() {
+		if (this.props.isAuth == false ) return <Navigate to='/login' />
 		return (
 			<Profile {...this.props}/>
 		);
@@ -20,6 +22,7 @@ class ProfileContainer extends React.Component {
 
 let mapStateToProps = (state) => {
 	return {
+		isAuth: state.auth.isAuth,
 		id: state.auth.id,
 		userProfile: state.profile.userProfile,
 	}

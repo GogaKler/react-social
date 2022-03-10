@@ -1,5 +1,4 @@
 // Point-Profile
-import './../../../css/profile-point.css';
 import { Container } from 'react-bootstrap';
 import ProfileHeader from './ProfileHeader/ProfileHeader';
 import ProfileNavbar from './ProfileNavbar/ProfileNavbar';
