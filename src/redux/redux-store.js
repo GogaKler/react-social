@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from "redux";
+import { applyMiddleware, combineReducers, createStore } from "redux";
+import thunkMiddleware from "redux-thunk";
 import AuthReducer from "./auth_reducer";
 
 // reducers 
@@ -17,7 +18,7 @@ let reducers = combineReducers(
 	}
 );
 
-let store = createStore(reducers);
+let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
 window.store = store
 window.storeState = store.getState();

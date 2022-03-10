@@ -3,11 +3,7 @@ import SidebarContainer from "./components/Sidebar/SidebarContainer";
 
 function App(props) {
 	return (
-			<main>
-				<div className="authUndefiend">
-					
-				</div>
-				
+			<main>				
 				<SidebarContainer />
 				
 				<Points store={props.store} />

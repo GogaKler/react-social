@@ -14,8 +14,10 @@ const Users = (props) => {
 			photosLarge={el.photos.large}
 			status={el.status}
 			followed={el.followed}
+			followProgress={props.followProgress}
 			// dispatch
-			userFollow={props.userFollow}
+			follow={props.follow}
+			unFollow={props.unFollow}
 		/>
 	)
 
@@ -59,7 +61,7 @@ const Users = (props) => {
 								</div>
 							</div>
 
-							{props.isFetching ? <PreloaderGhost /> : null} {/* preloader */}
+							{props.isFetching ? <PreloaderGhost /> : null}
 
 							<div className="users-wrapper">
 								{userElements}

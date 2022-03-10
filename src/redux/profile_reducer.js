@@ -1,3 +1,5 @@
+import { profileApi } from "../api/api";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
@@ -50,5 +52,15 @@ const ProfileReducer = (state = initalState, action) => {
 export const addPost = () =>	({type: ADD_POST});
 export const updateNewPostText = (newPostTitle, newPostDesc) => ({ type: UPDATE_NEW_POST_TEXT, NewPostTitle: newPostTitle, NewPostDesc: newPostDesc});
 export const setUserProfle = (profile) =>({type: SET_USER_PROFILE, profile}) ;
+
+// Thunks
+export const getUserProfile = (match) => {
+	return (dispatch) => {
+		let userId = match ? match.params.userId : 22553
+		profileApi.getUserProfile(userId).then(data => {
+			dispatch(setUserProfle(data));
+		});	
+	}
+}
 
 export default ProfileReducer;

@@ -20,4 +20,5 @@ const SidebarReducer = (state = initalState, action) => {
 
 export const SetToggleMenu = (toggleStatus) => ({type: SET_TOOGLE_MENU, toggleStatus})
 
+
 export default SidebarReducer;
