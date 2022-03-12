@@ -1,9 +1,9 @@
 import Points from "./components/Points/Points";
 import SidebarContainer from "./components/Sidebar/SidebarContainer";
 
-function App(props) {
+export const App = (props) => {
 	return (
-			<main>				
+			<main>
 				<SidebarContainer />
 				
 				<Points store={props.store} />
@@ -11,5 +11,4 @@ function App(props) {
 			</main>
 	)
 }
-
 export default App;

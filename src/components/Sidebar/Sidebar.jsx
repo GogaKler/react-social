@@ -30,7 +30,7 @@ const Sidebar = (props) => {
 				{props.isAuth
 					? <>
 						<li className="sidebar-menu__login">
-							<NavLink to="/login" className="sidebar-menu__link login-block">
+							<NavLink to="/" className="sidebar-menu__link login-block">
 								<i className="login-block__verefic-free bi bi-patch-check"></i>
 								<span className="sidebar-menu__text text">Вы успешно вошли</span>
 							</NavLink>

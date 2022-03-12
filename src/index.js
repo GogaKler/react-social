@@ -13,7 +13,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from './App';
 
 
-// Объявление переменной Ре-Рендера, где state - параметр
+// Объявление переменной Ре-Рендера
 let rerenderState = () => {
 	ReactDOM.render(
 		<BrowserRouter>

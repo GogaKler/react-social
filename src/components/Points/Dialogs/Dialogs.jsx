@@ -1,10 +1,10 @@
-import { Navigate } from 'react-router-dom';
+import { compose } from 'redux';
+import { withAuthRedirect } from '../../../hoc/hoc';
 import './../../../css/dialogs-point.css'
 import Chat from './Chat/Chat';
 import DialogsList from './DialogsList/DialogsList';
 
 const Dialogs = (props) => {
-  if (props.store.getState().auth.isAuth === false) return <Navigate to='/login' />
 	return (
 		<div className='point__dialogs'>
 			<DialogsList />
@@ -15,4 +15,6 @@ const Dialogs = (props) => {
 	)
 }
 
-export default Dialogs;
+
+
+export default compose(withAuthRedirect)(Dialogs);
