@@ -1,4 +1,5 @@
 import userPhoto from '../../../../assets/images/user.jpg'
+import UserStatus from './UserStatus/UserStatus';
 
 const CurrentUser = (props) => {
 
@@ -10,10 +11,9 @@ const CurrentUser = (props) => {
 			</div>
 			<div className='currentUser__FirstName-LastName'>
 				<span className='currentUser-FirstName'>{props.userProfile.fullName}</span>
-				{/* <span className='currentUser-LastName'>Колесников</span> */}
 				<i className="bi bi-circle-fill"></i>
 			</div>
-			<div className='currentUser-statusMood'><span>{props.userProfile.aboutMe}</span></div>
+			<UserStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
 			<div className='currentUser-infoPoints'>
 				<div className='currentUser-point user-city'>
 					<i className="bi bi-house-door"></i>

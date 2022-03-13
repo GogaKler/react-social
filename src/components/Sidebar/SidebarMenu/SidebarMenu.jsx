@@ -15,24 +15,24 @@ const SidebarMenu = () => {
 						<span className="text sidebar-menu__text">Диалоги</span>
 					</NavLink>
 				</li>
-				<li className="sidebar-menu__item">
+				{/* <li className="sidebar-menu__item">
 					<NavLink to="/friends" className="sidebar-menu__link">
 						<i className="bi bi-person-fill"></i>
 						<span className="text sidebar-menu__text">Друзья</span>
 					</NavLink>
-				</li>
+				</li> */}
 				<li className="sidebar-menu__item">
 					<NavLink to="/users" className="sidebar-menu__link">
 						<i className="bi bi-people-fill"></i>
 						<span className="text sidebar-menu__text">Пользователи</span>
 					</NavLink>
 				</li>
-				<li className="sidebar-menu__item">
+				{/* <li className="sidebar-menu__item">
 					<NavLink to="/music" href="#s" className="sidebar-menu__link">
 						<i className="bi bi-music-note-list"></i>
 						<span className="text sidebar-menu__text">Музыка</span>
 					</NavLink>
-				</li>
+				</li> */}
 				<li className="sidebar-menu__item">
 					<NavLink to="/settings" className="sidebar-menu__link">
 						<i className="bi bi-gear-fill"></i>
