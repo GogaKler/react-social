@@ -1,5 +1,6 @@
 import { PreloaderGhost } from '../../common/Preloaders/Preloaders';
 import styled from "styled-components"
+import { Container } from '../../../components_styles/components/Containers/Containers';
 
 const ProfileWrapper = styled.div`
 
