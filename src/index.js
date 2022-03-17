@@ -11,14 +11,16 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 // Main Component
 import App from './App';
+import { darkTheme, lightTheme } from './components_styles/Themes/Theme';
 
 
 // Объявление переменной Ре-Рендера
 let rerenderState = () => {
+
 	ReactDOM.render(
 		<BrowserRouter>
-			<Provider store = {store} >
-				<App store = {store} />
+			<Provider store={store} >
+				<App store={store} />
 			</Provider>
 		</BrowserRouter>, document.getElementById('root')
 	);
@@ -28,5 +30,8 @@ rerenderState();
 
 // Передаем CallBack в store. observer = Ре-Рендер
 store.subscribe(() => { rerenderState(store.getState()) });
+
+window.darkTheme = darkTheme;
+window.darkTheme = lightTheme;
 
 

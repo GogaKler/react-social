@@ -2,6 +2,7 @@ import User from './User/User'
 import '../../../css/users-point.css'
 import { Container } from 'react-bootstrap'
 import { PreloaderGhost } from '../../common/Preloaders/Preloaders'
+import { AppName } from '../../common/AppName/AppName'
 
 const Users = (props) => {
 
@@ -54,6 +55,7 @@ const Users = (props) => {
 					</div>
 					<div className='users-middle'>
 						<div className='users-middle__header'>
+							<AppName />
 							<div className='users-middle__title'>
 								Список пользователей
 								<div className='pagination'>

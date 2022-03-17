@@ -1,12 +1,11 @@
 import preloaderGhost from '../../../assets/preloaders/preloaderGhost.gif'
-import './Preloaders.css'
-
+import { FlexContainer } from '../../../components_styles/components/Containers/Containers'
 
 export const PreloaderGhost = (props) => {
 	return (
-		<div className="preloader-wrapper">
-			<img className="preloaderGhost preloader" src={preloaderGhost} alt="preloader" />
-		</div>
+		<FlexContainer align='center' justify='center' fWrap='wrap'>
+			<img src={preloaderGhost} alt="preloader" />
+		</FlexContainer>
 	)
 }
 
