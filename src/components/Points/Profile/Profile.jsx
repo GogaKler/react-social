@@ -4,7 +4,7 @@ import styled from "styled-components"
 import UserAvatar  from '../../common/UserAvatar/UserAvatar';
 import { PreloaderGhost } from '../../common/Preloaders/Preloaders';
 import Posts from './Posts/Posts';
-import { Description, Title } from '../../../components_styles/components/Text/Text';
+import { Title } from '../../../components_styles/components/Text/Text';
 import UsersStatus from './UserStatus/UserStatus';
 
 
@@ -63,7 +63,7 @@ const Profile = (props) => {
 					<FlexContainer align='center'>
 						<FlexCol flex='1 0 33.33%' fWrap='no-wrap'></FlexCol>
 						<FlexCol align='center' flex='1 0 66.66%' fWrap='no-wrap'>
-							<ProfileMenuLink to='posts'>Посты</ProfileMenuLink>
+							<ProfileMenuLink to='post'>Посты</ProfileMenuLink>
 							<ProfileMenuLink to='2'>Друзья</ProfileMenuLink>
 							<ProfileMenuLink to='3'>Подписки</ProfileMenuLink>
 							<ProfileMenuLink to='4'>Группы</ProfileMenuLink>
@@ -87,7 +87,7 @@ const Profile = (props) => {
 						</FlexCol>
 						<FlexCol flex='1 0 66.66%'>
 							<Routes>
-								<Route path='posts' element={<Posts />} />
+								<Route path='post' element={<Posts />} />
 							</Routes>
 						</FlexCol>
 					</FlexContainer>

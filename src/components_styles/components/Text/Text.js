@@ -19,5 +19,6 @@ export const Description = styled.div`
 	text-align: ${({align}) => align || ''};
 	margin: ${({margin}) => margin || 0};
 	padding: ${({padding}) => padding || 0};
+	white-space: ${({space}) => space || ''};
 	flex: ${({flex}) => flex || ''};
 `;

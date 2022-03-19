@@ -10,7 +10,7 @@ const SearchWrapper = styled.div`
 	margin: ${({margin}) => margin || 0};
 	border: 1px solid ${({theme}) => theme.neutral.neutral70};
 `
-const SearchInpit = styled.input`
+const SearchInput = styled.input`
 	background: 0;
 	border: 0;
 	outline: 0;
@@ -33,7 +33,7 @@ export const Search = (props) => {
 	return (
 		<SearchWrapper margin={props.margin}>
 			<FlexContainer align='center'>
-				<SearchInpit placeholder={props.placeholder || 'Поиск..'}/>
+				<SearchInput placeholder={props.placeholder || 'Поиск..'}/>
 				<SearchSendIcon icon={faCaretRight} />
 			</FlexContainer>
 		</SearchWrapper>

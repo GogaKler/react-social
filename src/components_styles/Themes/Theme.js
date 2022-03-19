@@ -24,10 +24,12 @@ export const darkTheme = {
 	
 	primary:{
 		primary90: "#FF8887",
+		primary80: "#FFB3B1",
 		primary10: "#69000E",
 	},
 	secondary: {
 		secondary90: "#A5C8FF",
+		secondary80: "#D4E3FF",
 		secondary10: "#003062",
 	},
 	tertiary: {
@@ -56,10 +58,12 @@ export const lightTheme = {
 
 	primary:{
 		primary90: "#F35E60",
+		primary80: "#D14649",
 		primary10: "#FFFFFF",
 	},
 	secondary: {
 		secondary90: "#235FA6",
+		secondary80: "#7AADFA",
 		secondary10: "#FFFFFF",
 	},
 	tertiary: {

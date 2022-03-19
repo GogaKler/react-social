@@ -9,7 +9,6 @@ import { AppName } from '../common/AppName/AppName';
 import { Description } from '../../components_styles/components/Text/Text';
 import { Search } from '../common/Search/Search';
 import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
-import UserAvatar from '../common/UserAvatar/UserAvatar';
 
 // --------------------------------------------------------------
 const HeaderStyle = styled.div`

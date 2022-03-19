@@ -15,11 +15,12 @@ const HeaderNavLink = styled(NavLink)`
 		color: ${({theme}) => theme.neutral.neutral40};
 	}
 `
+
 const HeaderNavigation = (props) => {
 	return ( 
 		<HeaderNavigationWrapper>
 			<FlexContainer align='center'>
-				<HeaderNavLink to = '/profile'>Профиль</HeaderNavLink>
+				<HeaderNavLink to = {'/profile'}>Профиль</HeaderNavLink>
 				<HeaderNavLink to = '/dialogs'>Диалоги</HeaderNavLink>
 				<HeaderNavLink to = '/users'>Пользователи</HeaderNavLink>
 			</FlexContainer>

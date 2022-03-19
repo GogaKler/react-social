@@ -17,7 +17,7 @@ export const App = (props) => {
 		<main>
 			<ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
 				<GlobalStyles />
-				{window.location.pathname === '/login/*' 
+				{window.location.pathname === '/login' 
 				? <Login /> 
 				: <Points  switchTheme={switchTheme} theme={theme} store={props.store} />}
 			</ThemeProvider>

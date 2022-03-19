@@ -8,7 +8,6 @@ import UsersContainer from './Users/UsersContainer';
 import './../../css/profile-point.css'
 import './../../css/login-point.css'
 import HeaderContainer from '../Header/HeaderContainer';
-import Login from '../Login/Login';
 
 
 const Points = (props) => {
@@ -18,8 +17,6 @@ const Points = (props) => {
 
 			<section className="point" >
 				<Routes>
-					
-					{/* <Route path="/login/" element={<Login />} /> */}
 
 					<Route path="/profile/*"
 						element={<ProfileContainer />}

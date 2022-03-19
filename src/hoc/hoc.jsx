@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Navigate, useMatch } from "react-router-dom";
 
@@ -9,7 +9,7 @@ let mapStateToPropsRedirect = (state) => {
 }
 
 export const withRouter = (Component) => (props) => {
-	const match = useMatch('/profile/:userId/');
+	const match = useMatch('/profile/:userId');
 	return <Component {...props} match={match} />;
 }
 
