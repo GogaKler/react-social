@@ -9,6 +9,7 @@ import { AppName } from '../common/AppName/AppName';
 import { Description } from '../../components_styles/components/Text/Text';
 import { Search } from '../common/Search/Search';
 import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
+import UserAvatar from '../common/UserAvatar/UserAvatar';
 
 // --------------------------------------------------------------
 const HeaderStyle = styled.div`
@@ -77,7 +78,7 @@ const Header = (props) => {
 					<HeaderNavigation />
 				</FlexContainer>
 				<FlexContainer align='center' justify='space-around' onClick={toggleOpenUser} cursor='pointer'>
-					<IconProfileOnHeader icon={faCircleUser} />
+					<IconProfileOnHeader icon={faCircleUser}/>
 					{!openUser ? <FontAwesomeIcon icon={faCaretDown} /> : <FontAwesomeIcon icon={faCaretDown} rotation={180} />}
 				</FlexContainer>
 			</FlexContainer>

@@ -1,7 +1,12 @@
 
 
 let root = {
-
+	neutralColors:{
+		neutral80: '#1B1B1E'
+	},
+	margins:{
+		marginTopElement: '24px',
+	},
 	radius:{
 		radiusHard: "15px",
 		radiusLight: "10px",
@@ -9,7 +14,8 @@ let root = {
 	},
 	transitions: {
 		transitionTheme: '0.38s ease-in-out',
-		transitionDefault: '0.40s ease-out'
+		transitionDefault: '0.40s ease-out',
+		transitionFast: '0.2s ease-out',
 	}
 }
 
@@ -65,7 +71,7 @@ export const lightTheme = {
 		error10: "#FFDAD4",
 	},
 	neutral:{
-		neutral90: "#FDFBFF",
+		neutral90: "#FFFFFF",
 		neutral80: "#C8C6CA",
 		neutral70: "#ACABAF",
 		neutral60: "#919094",

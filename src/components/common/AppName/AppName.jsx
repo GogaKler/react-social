@@ -3,13 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { FlexContainer } from "../../../components_styles/components/Containers/Containers"
 import styled, { css } from "styled-components"
 
+const DefaultCustomSize = '22px'
+const customSize = ({font_size}) => font_size || DefaultCustomSize
 
-const DefaultSize = 'md'
-const xxlSize = ({sizelogo}) => sizelogo === 'xxl' && css`font-size: 50px;`
-const xlSize = ({sizelogo}) => sizelogo === 'xl' && css`font-size: 40px;`
-const lgSize = ({sizelogo}) => sizelogo === 'lg' && css`font-size: 30px;`
-const mdSize = ({sizelogo}) => sizelogo === 'md' && css`font-size: 22px;`
-const smSize = ({sizelogo}) => sizelogo === 'sm' && css`font-size: 15px;`
+const DefaultSizePreset = 'md'
+const xxlSize = ({presets_size}) => presets_size === 'xxl' && css`font-size: 50px;`
+const xlSize = ({presets_size}) => presets_size === 'xl' && css`font-size: 40px;`
+const lgSize = ({presets_size}) => presets_size === 'lg' && css`font-size: 30px;`
+const mdSize = ({presets_size}) => presets_size === 'md' && css`font-size: 22px;`
+const smSize = ({presets_size}) => presets_size === 'sm' && css`font-size: 15px;`
 
 const AppTitle = styled.div`
 	font-weight: 700;
@@ -19,6 +21,8 @@ const AppTitle = styled.div`
 		& span{
 			font-weight: 300;
 		}
+
+	font-size: ${customSize};
 	${xxlSize}
 	${xlSize}
 	${lgSize}
@@ -33,6 +37,8 @@ const AppLogo = styled(FontAwesomeIcon)`
 	&:hover{
 		color: ${({ theme }) => theme.neutral.neutral10};
 	};
+
+	font-size: ${customSize};
 	${xxlSize}
 	${xlSize}
 	${lgSize}
@@ -43,8 +49,8 @@ const AppLogo = styled(FontAwesomeIcon)`
 export const AppName = (props) => {
 	return (
 		<FlexContainer align='center' padding={props.padding} margin={props.margin}>
-			<AppLogo icon={faCode} sizelogo={props.size || DefaultSize}/>
-			<AppTitle sizelogo={props.size || DefaultSize}>React&nbsp;<span>Social</span></AppTitle>
+			<AppLogo icon={faCode} presets_size={props.size || DefaultSizePreset}/>
+			<AppTitle presets_size={props.size || DefaultSizePreset}>React&nbsp;<span>Social</span></AppTitle>
 		</FlexContainer>
 	)
 }

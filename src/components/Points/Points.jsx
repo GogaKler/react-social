@@ -12,7 +12,6 @@ import Login from '../Login/Login';
 
 
 const Points = (props) => {
-
 	return (
 		<>
 			<HeaderContainer switchTheme={props.switchTheme} theme={props.theme} />
@@ -20,7 +19,7 @@ const Points = (props) => {
 			<section className="point" >
 				<Routes>
 					
-					<Route path="/login/" element={<Login />} />
+					{/* <Route path="/login/" element={<Login />} /> */}
 
 					<Route path="/profile/*"
 						element={<ProfileContainer />}

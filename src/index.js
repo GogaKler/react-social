@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // css 
 import './css/global_styles.css';
-import "bootstrap-icons/font/bootstrap-icons.css";
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 // Redux - store
 import store from "./redux/redux-store";

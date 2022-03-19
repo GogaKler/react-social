@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Navigate, useMatch } from "react-router-dom";
 
@@ -17,20 +17,11 @@ export const withAuthRedirect = (Component) => {
 	let RedirectComponent = (props) => {
 		if (!props.isAuth) return <Navigate to='/login' />
 		return <Component {...props} /> 
-		
 	}
 	const ConnectRedirectComponent = connect(mapStateToPropsRedirect)(RedirectComponent);
 	return ConnectRedirectComponent;
 }
 
-// export const withAuthRedirect = (Component) => {
-// 	class RedirectComponent extends React.Component {
-// 		render(){
-// 			if (!this.props.isAuth) return <Navigate to = '/login' />
-// 			return <Component {...this.props} />
-// 		}
-// 	}
-
-// 	let ConnectRedirectComponent = connect(mapStateToPropsRedirect)(RedirectComponent);
-// 	return ConnectRedirectComponent;
-// }
+export const withUserUndefiend = (Component) => (props) => {
+	
+}

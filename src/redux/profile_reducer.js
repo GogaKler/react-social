@@ -1,4 +1,5 @@
 import { profileApi } from "../api/api";
+import jpf from '../assets/preloaders/preloaderGhost.gif'
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -75,6 +76,7 @@ export const updateUserStatus = (status) => {
 	}
 }
 export const getUserProfile = (userId) => {
+
 	return (dispatch) => {
 		profileApi.getUserProfile(userId).then(data => {
 			dispatch(setUserProfile(data));
