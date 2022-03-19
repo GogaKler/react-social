@@ -31,7 +31,9 @@
 `$ git checkout react-social-with-styled-componets-RE_FACTORING`
 
 Установите все зависимости
+
 `$ npm install`
 
 Запустите проект 
+
 `$ npm start`
