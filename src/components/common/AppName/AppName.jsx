@@ -1,7 +1,7 @@
+import styled, { css } from "styled-components/macro"
 import { faCode } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { FlexContainer } from "../../../components_styles/components/Containers/Containers"
-import styled, { css } from "styled-components"
 
 const DefaultCustomSize = '22px'
 const customSize = ({font_size}) => font_size || DefaultCustomSize

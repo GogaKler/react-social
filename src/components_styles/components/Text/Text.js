@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 
 export const Title = styled.div`
@@ -9,6 +9,7 @@ margin: ${({margin}) => margin || 0};
 padding: ${({padding}) => padding || 0 };
 position: ${({position}) => position || 'static'};
 line-height: ${({lineH}) => lineH || ''};
+white-space: ${({space}) => space || ''};
 `
 export const Description = styled.div`
 	font-size: ${({FontSize}) => FontSize || ''};

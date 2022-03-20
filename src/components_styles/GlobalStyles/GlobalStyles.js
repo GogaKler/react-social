@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components/macro'
 
 const fontFace = (name, src, fontWeight = 'normal', fontStyle = 'normal') => {
 	return `

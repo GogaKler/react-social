@@ -1,16 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { SetToggleMenu } from "../../redux/sidebar_reducer";
-import { getAuthUser, setAuthUserData } from "../../redux/auth_reducer";
+import { getAuthUser, logout   } from "../../redux/auth_reducer";
 import Header from "./Header";
 
 
 
 class HeaderContainer extends React.Component {
-	
-	componentDidMount() {
-		this.props.getAuthUser();
-	}
+
 	render() {
 		return (
 			<Header {...this.props} />
@@ -28,4 +25,4 @@ let mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { SetToggleMenu, setAuthUserData, getAuthUser })(HeaderContainer)
+export default connect(mapStateToProps, { SetToggleMenu, getAuthUser, logout })(HeaderContainer)

@@ -1,5 +1,4 @@
 import { profileApi } from "../api/api";
-import jpf from '../assets/preloaders/preloaderGhost.gif'
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -12,8 +11,6 @@ let initalState = {
 	],
 	userProfile: null,
 	status: '',
-	NewPostTitle: "",
-	NewPostDesc: "",
 }
 
 const ProfileReducer = (state = initalState, action) => {
@@ -25,25 +22,12 @@ const ProfileReducer = (state = initalState, action) => {
 				PostData: [
 					{
 						id: "4",
-						firstName: "Егор",
-						lastName: "Колесников",
 						date: "28 фев.",
-						likesCount: "0",
-						commentsCount: "0",
-						postTitle: state.NewPostTitle,
-						postDesc: state.NewPostDesc,
+						postTitle: action.title,
+						postDesc: action.desc,
 					},
 				...state.PostData],
-				NewPostTitle: '',
-				NewPostDesc: '',
 			};
-
-		case UPDATE_NEW_POST_TEXT:
-			return {
-				...state,
-				NewPostTitle: action.NewPostTitle,
-				NewPostDesc: action.NewPostDesc
-			}
 		case SET_USER_PROFILE:
 			return{ ...state, userProfile: action.profile }
 		case SET_USER_STATUS:
@@ -53,7 +37,7 @@ const ProfileReducer = (state = initalState, action) => {
 	}
 }
 
-export const addPost = () =>	({type: ADD_POST});
+export const addPost = (title, desc) =>	({type: ADD_POST, title, desc});
 export const updateNewPostText = (newPostTitle, newPostDesc) => ({ type: UPDATE_NEW_POST_TEXT, NewPostTitle: newPostTitle, NewPostDesc: newPostDesc});
 export const setUserProfile = (profile) =>({type: SET_USER_PROFILE, profile}) ;
 export const setUserStatus = (status) =>({type: SET_USER_STATUS, status}) ;

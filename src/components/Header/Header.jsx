@@ -1,5 +1,5 @@
 // Point-Profile
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -74,7 +74,7 @@ const Header = (props) => {
 				<FlexContainer align='center'>
 					<AppName margin='0 25px 0 0' />
 					<Search placeholder='Поиск...' margin='0 25px 0 0'/>
-					<HeaderNavigation />
+					<HeaderNavigation id={props.id}/>
 				</FlexContainer>
 				<FlexContainer align='center' justify='space-around' onClick={toggleOpenUser} cursor='pointer'>
 					<IconProfileOnHeader icon={faCircleUser}/>
@@ -87,6 +87,7 @@ const Header = (props) => {
 					<WrapperToggleMenu>
 						<FlexContainer direction='column' align='flex-start'>
 							<DescriptionToggleMenu onClick={props.switchTheme}>Переключиться на &nbsp;<span>{props.theme === 'light' ? "Dark Theme" : "Light Theme"}</span></DescriptionToggleMenu>
+							<DescriptionToggleMenu onClick={props.logout}>Выйти</DescriptionToggleMenu>
 						</FlexContainer>
 					</WrapperToggleMenu>
 				</PositionContainer>}

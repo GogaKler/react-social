@@ -4,6 +4,7 @@ import { Navigate, useMatch } from "react-router-dom";
 
 let mapStateToPropsRedirect = (state) => {
 	return{
+		id: state.auth.id,
 		isAuth: state.auth.isAuth
 	}
 }
@@ -20,8 +21,4 @@ export const withAuthRedirect = (Component) => {
 	}
 	const ConnectRedirectComponent = connect(mapStateToPropsRedirect)(RedirectComponent);
 	return ConnectRedirectComponent;
-}
-
-export const withUserUndefiend = (Component) => (props) => {
-	
 }

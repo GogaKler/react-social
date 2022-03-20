@@ -1,9 +1,9 @@
+import styled from "styled-components/macro";
 import { faPencil, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import styled from "styled-components";
-import { Button, ButtonTransparent } from "../../../../components_styles/components/Button/Button";
+import { Button } from "../../../../components_styles/components/Button/Button";
 import { FlexContainer } from "../../../../components_styles/components/Containers/Containers";
 import { Input, InputWrapper } from "../../../../components_styles/components/Input/Input";
 import { Description } from "../../../../components_styles/components/Text/Text";
@@ -52,10 +52,7 @@ const UsersStatus = (props) => {
 					</FlexContainer>
 				</StatusWrapper>
 				:
-				<Formik
-					initialValues={StatusValue}
-					onSubmit={onSubmit}
-				>
+				<Formik initialValues={StatusValue} onSubmit={onSubmit} >
 					{({ values, handleChange, handleBlur, handleSubmit }) => (
 						<StatusWrapper>
 							<Form onSubmit={handleSubmit}>
@@ -76,7 +73,6 @@ const UsersStatus = (props) => {
 								</FlexContainer>
 							</Form>
 						</StatusWrapper>
-
 					)}
 				</Formik>
 			}

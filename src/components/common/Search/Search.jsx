@@ -1,6 +1,6 @@
+import styled from 'styled-components/macro';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
 import { FlexContainer } from '../../../components_styles/components/Containers/Containers';
 
 const SearchWrapper = styled.div`
@@ -9,6 +9,7 @@ const SearchWrapper = styled.div`
 	border-radius: ${({theme}) => theme.radius.radiusLight2x};
 	margin: ${({margin}) => margin || 0};
 	border: 1px solid ${({theme}) => theme.neutral.neutral70};
+	width: ${({width}) => width || ''};
 `
 const SearchInput = styled.input`
 	background: 0;
@@ -18,6 +19,7 @@ const SearchInput = styled.input`
 	font-style: italic;
 	font-weight: 600;
 	color: ${({theme}) => theme.neutral.neutral10};
+	width: ${({width}) => width || ''};
 `
 const SearchSendIcon = styled(FontAwesomeIcon)`
 	padding: 0 8px;
@@ -31,9 +33,9 @@ const SearchSendIcon = styled(FontAwesomeIcon)`
 `
 export const Search = (props) => {
 	return (
-		<SearchWrapper margin={props.margin}>
+		<SearchWrapper margin={props.margin} width={props.width}>
 			<FlexContainer align='center'>
-				<SearchInput placeholder={props.placeholder || 'Поиск..'}/>
+				<SearchInput placeholder={props.placeholder || 'Поиск..'} width={props.width}/>
 				<SearchSendIcon icon={faCaretRight} />
 			</FlexContainer>
 		</SearchWrapper>

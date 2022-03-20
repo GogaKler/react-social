@@ -5,7 +5,7 @@ let root = {
 		neutral80: '#1B1B1E'
 	},
 	margins:{
-		marginTopElement: '24px',
+		marginTopBlock: '24px',
 	},
 	radius:{
 		radiusHard: "15px",

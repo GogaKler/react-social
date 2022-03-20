@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 
 // defaults
 const defaultButton = {
@@ -44,11 +44,13 @@ export const Button = styled.button`
 	background: ${defaultButton.backgroundColor};
 	padding: ${defaultButton.padding};
 	font-size: ${defaultButton.fontSize};
+	white-space: nowrap;
+	padding: ${({padding}) => padding};
 	border-radius: ${({ theme }) => theme.radius.radiusLight};
 	font-weight: ${({ fontWeight }) => fontWeight || '600'};
 	margin: ${({ margin }) => margin || 0};
 	width: ${({ width }) => width || ''};
-	align-self: ${({ alignSelf }) => alignSelf || ''};
+	align-self: ${({ self }) => self || ''};
 	transition: ${({ theme }) => theme.transitions.transitionDefault};
 	cursor: pointer;
 		&:focus{

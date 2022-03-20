@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { FlexContainer } from '../../../components_styles/components/Containers/Containers';
 import { NavLink } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const HeaderNavigation = (props) => {
 	return ( 
 		<HeaderNavigationWrapper>
 			<FlexContainer align='center'>
-				<HeaderNavLink to = {'/profile'}>Профиль</HeaderNavLink>
+				<HeaderNavLink to = '/profile'>Профиль</HeaderNavLink>
 				<HeaderNavLink to = '/dialogs'>Диалоги</HeaderNavLink>
 				<HeaderNavLink to = '/users'>Пользователи</HeaderNavLink>
 			</FlexContainer>

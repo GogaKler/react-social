@@ -1,50 +1,29 @@
-import { Container, FlexCol, FlexContainer } from '../../../components_styles/components/Containers/Containers';
-import { NavLink, Route, Routes } from 'react-router-dom';
-import styled from "styled-components"
-import UserAvatar  from '../../common/UserAvatar/UserAvatar';
+import styled from "styled-components/macro"
 import { PreloaderGhost } from '../../common/Preloaders/Preloaders';
-import Posts from './Posts/Posts';
+import { Container, FlexCol, FlexContainer } from '../../../components_styles/components/Containers/Containers';
 import { Title } from '../../../components_styles/components/Text/Text';
+import UserAvatar from '../../common/UserAvatar/UserAvatar';
 import UsersStatus from './UserStatus/UserStatus';
+import Posts from './Posts/Posts';
+import ProfileMenu from "./ProfileMenu/ProfileMenu";
 
 
-
-const ProfileWrapper = styled.div`
-
-`
-// Menu
-const MenuWrapper = styled.div`
-	margin-top: ${({ theme }) => theme.margins.marginTopElement};
-	border-bottom: 1px solid ${({ theme }) => theme.neutral.neutral80};
-`
-const ProfileMenuLink = styled(NavLink)`
-	font-size: 15px;
-	padding: 8px 16px;
-	border-bottom: 2px solid transparent;
-	transition: ${({ theme }) => theme.transitions.transitionFast};
-	color: ${({ theme }) => theme.neutral.neutral20};
-	&.active{
-		color: ${({ theme }) => theme.neutral.neutral10};
-		font-weight: 600;
-		border-bottom: 2px solid ${({ theme }) => theme.secondary.secondary90};
-	}
-	&:not(.active):hover{
-		border-bottom: 2px solid ${({ theme }) => theme.neutral.neutral70};
-	}
-`
-// Body -> UserProfile
+// UserProfileWrapper
 const UserProfileWrapper = styled.div`
-	margin-top: ${({ theme }) => theme.margins.marginTopElement};
+	margin-top: ${({ theme }) => theme.margins.marginTopBlock};
 `
-// Body -> LeftColumn -> UserInfo
+// LeftColumn -> UserInfo
 const UserInfoWrapper = styled.div`
 	width: 100%;
-	margin-top: -50px;
+	margin-top: -55px;
 `
 const UserDescription = styled.div`
 	padding: 15px;
 `
-
+// RightColumn -> UserPostsWrapper
+const PostsWrapper = styled.div`
+	width: 100%;
+`
 
 const Profile = (props) => {
 
@@ -57,27 +36,15 @@ const Profile = (props) => {
 		)
 	}
 	return (
-		<ProfileWrapper>
-			<MenuWrapper>
-				<Container>
-					<FlexContainer align='center'>
-						<FlexCol flex='1 0 33.33%' fWrap='no-wrap'></FlexCol>
-						<FlexCol align='center' flex='1 0 66.66%' fWrap='no-wrap'>
-							<ProfileMenuLink to='post'>Посты</ProfileMenuLink>
-							<ProfileMenuLink to='2'>Друзья</ProfileMenuLink>
-							<ProfileMenuLink to='3'>Подписки</ProfileMenuLink>
-							<ProfileMenuLink to='4'>Группы</ProfileMenuLink>
-						</FlexCol>
-					</FlexContainer>
-				</Container>
-			</MenuWrapper>
+		<>
+			<ProfileMenu />
 			<Container>
 				<UserProfileWrapper>
 					<FlexContainer>
 						<FlexCol flex='1 0 33.33%'>
 							<UserInfoWrapper>
-								<FlexContainer align='center' >
-									<UserAvatar size='300px' avatar={props.userProfile.photos.large}/>
+								<FlexContainer align='center' justify='center' >
+									<UserAvatar size='300px' avatar={props.userProfile.photos.large} />
 								</FlexContainer>
 								<UserDescription>
 									<Title FontSize='30px'>{props.userProfile.fullName}</Title>
@@ -86,14 +53,14 @@ const Profile = (props) => {
 							</UserInfoWrapper>
 						</FlexCol>
 						<FlexCol flex='1 0 66.66%'>
-							<Routes>
-								<Route path='post' element={<Posts />} />
-							</Routes>
+							<PostsWrapper>
+								<Posts name={props.userProfile.fullName} posts={props.posts} addPost={props.addPost}/>
+							</PostsWrapper>
 						</FlexCol>
 					</FlexContainer>
 				</UserProfileWrapper>
 			</Container>
-		</ProfileWrapper>
+		</>
 	)
 
 }

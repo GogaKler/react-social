@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components_styles/GlobalStyles/GlobalStyles";
 import { darkTheme, lightTheme } from "./components_styles/Themes/Theme";
 import Points from "./components/Points/Points";
-import Login from "./components/Login/Login";
+import { getAuthUser } from "./redux/auth_reducer";
+import { connect } from "react-redux";
 
 export const App = (props) => {
 	const [theme, setTheme] = useState("dark");
+
+	useEffect(() => {props.getAuthUser()})
 
 	const switchTheme = () => {
 		theme === "dark" ? setTheme("light") : setTheme("dark");
@@ -17,14 +20,12 @@ export const App = (props) => {
 		<main>
 			<ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
 				<GlobalStyles />
-				{window.location.pathname === '/login' 
-				? <Login /> 
-				: <Points  switchTheme={switchTheme} theme={theme} store={props.store} />}
+				<Points  switchTheme={switchTheme} theme={theme} store={props.store} />
 			</ThemeProvider>
 		</main>
 	)
 }
 
-export default App;
+export default connect(null, {getAuthUser})(App);
 
 
