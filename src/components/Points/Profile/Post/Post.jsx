@@ -20,7 +20,7 @@ const PostHeaderFlex = styled(FlexContainer)`
 	border-bottom: 1px solid ${({ theme }) => theme.neutral.neutral70};
 `
 const PostBody = styled.div`
- padding: 10px 8px;
+ padding: 15px;
 `
 
 

@@ -2,9 +2,6 @@ import styled from 'styled-components/macro';
 import { FlexContainer } from '../../../components_styles/components/Containers/Containers';
 import { NavLink } from 'react-router-dom';
 
-const HeaderNavigationWrapper = styled.div`
-
-`
 const HeaderNavLink = styled(NavLink)`
 	margin-right: 20px;
 	font-size: 14px;

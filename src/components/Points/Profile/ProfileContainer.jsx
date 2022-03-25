@@ -10,8 +10,8 @@ import {useNavigate, useParams } from "react-router-dom";
 const ProfileContainer = (props) => {
 	const params = useParams()
 	const navigate = useNavigate();
-
 	useEffect(() => {
+	
 		let userId = params.userId
 		if (!userId) {
 			userId = props.authorizedUserId

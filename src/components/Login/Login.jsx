@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import * as yup from 'yup'
 import { AppName } from "../common/AppName/AppName";
 import { Description } from '../../components_styles/components/Text/Text'
-import { FlexContainer } from "../../components_styles/components/Containers/Containers";
+import { FlexContainer, PositionContainer } from "../../components_styles/components/Containers/Containers";
 import { connect } from "react-redux";
 import { login } from "../../redux/auth_reducer";
 import { Navigate } from "react-router-dom";
+import { Title } from './../../components_styles/components/Text/Text';
 
 
 const StyleText = styled.h1`
@@ -18,6 +19,12 @@ const StyleText = styled.h1`
 	padding-bottom: 15px;
 	border-bottom: 1px solid var(--accent-colorText50);
 	color: ${({ theme }) => theme.secondary.secondary90};
+`
+const WrapperLogin = styled(PositionContainer)`
+	padding: 10px;
+	background-color: ${({theme}) => theme.neutral.neutral80};
+	border-radius: ${({theme}) => theme.radius.radiusHard};
+	border: 1px solid ${({theme}) => theme.primary.primary90};
 `
 
 const Login = (props) => {
@@ -38,8 +45,13 @@ const Login = (props) => {
 	return (
 		<>
 			<div className="login">
+				<WrapperLogin pos='absolute' right='400px' top='350px'>
+					<Title margin='0 0 5px 0'>Тестовые данные</Title>
+					<Description>Email: &nbsp;aestharm@gmail.com</Description>
+					<Description>Пароль: &nbsp;qwerty1234</Description>
+				</WrapperLogin>
 				<AppName size={'xxl'} margin='0 0 25px 0' />
-				<StyleText>Войдите в свою Учётную Запись</StyleText>
+				<StyleText>Войдите в Учётную Запись</StyleText>
 
 				<Formik
 					initialValues={LoginValues}
@@ -50,7 +62,7 @@ const Login = (props) => {
 					{({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
 						<Form onSubmit={handleSubmit} className="login__form">
 							<div className="login__label-wrapper">
-								<label htmlFor='email' className="login__label">E-маил</label>
+								<label htmlFor='email' className="login__label">Email</label>
 								{touched.email && errors.email && <span className="login__error">{errors.email}</span>}
 							</div>
 							<Field className="login__input"

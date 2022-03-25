@@ -5,16 +5,12 @@ import Dialogs from './Dialogs/Dialogs';
 import ProfileContainer from './Profile/ProfileContainer';
 import UsersContainer from './Users/UsersContainer';
 // css
-import './../../css/profile-point.css'
 import './../../css/login-point.css'
-import HeaderContainer from '../Header/HeaderContainer';
+import './../../css/profile-point.css'
 import Login from '../Login/Login';
 
 const Points = (props) => {
 	return (
-		<>
-			<HeaderContainer switchTheme={props.switchTheme} theme={props.theme} id={props.id}/>
-
 			<section className="point" >
 				<Routes>
 
@@ -24,7 +20,7 @@ const Points = (props) => {
 					
 					<Route path="/profile" element={<ProfileContainer />}>
         		<Route path=":userId" element={<ProfileContainer />} />
-      		</Route>
+      			</Route>
 s
 					<Route path="/dialogs/"
 						element={<Dialogs store={props.store} />}
@@ -36,7 +32,6 @@ s
 
 				</Routes>
 			</section >
-		</>
 	)
 }
 

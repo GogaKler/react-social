@@ -6,6 +6,7 @@ import { GlobalStyles } from "./components_styles/GlobalStyles/GlobalStyles";
 import { darkTheme, lightTheme } from "./components_styles/Themes/Theme";
 import { initializeApp } from "./redux/app_reducer";
 import { PreloaderGhost } from './components/common/Preloaders/Preloaders';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 
 export const App = (props) => {
@@ -27,6 +28,7 @@ export const App = (props) => {
 		<main>
 			<ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
 				<GlobalStyles />
+				<HeaderContainer switchTheme={switchTheme} theme={theme} />
 				<Points  switchTheme={switchTheme} theme={theme} store={props.store} />
 			</ThemeProvider>
 		</main>
