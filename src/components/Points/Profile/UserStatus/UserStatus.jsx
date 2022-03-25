@@ -1,5 +1,5 @@
 import styled from "styled-components/macro";
-import { faPencil, faX } from "@fortawesome/free-solid-svg-icons";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Formik } from "formik";
 import { useState } from "react";
@@ -14,7 +14,7 @@ const statusFontStyle = 'italic'
 
 const StatusWrapper = styled.div`
 	margin: 10px 0;
-	margin-left: ${({marginLeft}) => marginLeft || 0};
+	margin-left: ${({ marginLeft }) => marginLeft || 0};
 `
 const StatusInput = styled(Input)`
 	font-size: ${statusFontSize};
@@ -52,29 +52,29 @@ const UsersStatus = (props) => {
 					</FlexContainer>
 				</StatusWrapper>
 				:
-				<Formik initialValues={StatusValue} onSubmit={onSubmit} >
-					{({ values, handleChange, handleBlur, handleSubmit }) => (
-						<StatusWrapper>
-							<Form onSubmit={handleSubmit}>
-								<FlexContainer justify='space-between'>
-									<InputWrapper margin='0 10px 0 0'>
-										<StatusInput 
-											name='status' onChange={handleChange}
-											onBlur={handleBlur} autoFocus={true}
-											value={values.status}
-										/>
-									</InputWrapper>
-									<Button type='submit' >
-										<FontAwesomeIcon icon={faPencil} beat />
-									</Button>
-									<Button onClick={toggleStatus} margin='0 0 0 5px'>
-										<FontAwesomeIcon icon={faX} />
-									</Button>
-								</FlexContainer>
-							</Form>
-						</StatusWrapper>
-					)}
-				</Formik>
+				<>
+						<Formik initialValues={StatusValue} onSubmit={onSubmit} >
+							{({ values, handleChange, handleBlur, handleSubmit }) => (
+								<StatusWrapper>
+									<Form onSubmit={handleSubmit}>
+										<FlexContainer justify='space-between'>
+											<InputWrapper margin='0 10px 0 0'>
+												<StatusInput
+													name='status' onChange={handleChange}
+													onBlur={handleBlur} autoFocus={true}
+													value={values.status}
+												/>
+											</InputWrapper>
+											<Button type='submit' >
+												<FontAwesomeIcon icon={faPencil} />
+											</Button>
+										</FlexContainer>
+									</Form>
+								</StatusWrapper>
+							)}
+						</Formik>
+				</>
+
 			}
 		</>
 	);

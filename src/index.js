@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // css 
+import './assets/Fonts/fonts.scss'
 import './css/global_styles.css';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 // Redux - store
@@ -14,21 +15,13 @@ import { darkTheme, lightTheme } from './components_styles/Themes/Theme';
 
 
 // Объявление переменной Ре-Рендера
-let rerenderState = () => {
-
-	ReactDOM.render(
-		<BrowserRouter>
-			<Provider store={store} >
-				<App store={store} />
-			</Provider>
-		</BrowserRouter>, document.getElementById('root')
-	);
-}
-// Вызов функции Ре-Рендер. По сути state = store.getState()
-rerenderState();
-
-// Передаем CallBack в store. observer = Ре-Рендер
-store.subscribe(() => { rerenderState(store.getState()) });
+ReactDOM.render(
+	<BrowserRouter>
+		<Provider store={store} >
+			<App store={store} />
+		</Provider>
+	</BrowserRouter>, document.getElementById('root')
+);
 
 window.darkTheme = darkTheme;
 window.darkTheme = lightTheme;

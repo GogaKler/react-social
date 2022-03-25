@@ -5,7 +5,7 @@ import { Button } from "../../../../components_styles/components/Button/Button";
 import { FlexContainer, PositionContainer } from '../../../../components_styles/components/Containers/Containers';
 import { Description, Title } from "../../../../components_styles/components/Text/Text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 import { keyframes } from "styled-components";
 import { Input, InputWrapper } from "../../../../components_styles/components/Input/Input";
 import { Search } from "../../../common/Search/Search";
@@ -63,13 +63,14 @@ const Posts = (props) => {
 			<PositionContainer pos='relative'>
 				<FlexContainer padding='0 0 20px 0' justify='space-between' align='center'>
 					<Search width='100%' margin='0 15px 0 0' />
-					{!editMode ? <Button transparent second onClick={toggleMode} padding='7px'>Новый пост</Button> :
+					<Button transparent second onClick={toggleMode} padding='7px'>Новый пост</Button>
+					{!editMode ? null :
 						<>
 							<NewPostWrapper >
 								<NewPostHeaderFlex justify='space-between' margin='0 0 15px 0'>
 									<Title space='nowrap'>Опубликуйте новый пост!</Title>
 									<Button onClick={toggleMode}>
-										<FontAwesomeIcon icon={faCommentDots} fade />
+										<FontAwesomeIcon icon={faX} />
 									</Button>
 								</NewPostHeaderFlex>
 								

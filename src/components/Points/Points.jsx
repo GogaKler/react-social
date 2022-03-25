@@ -21,10 +21,10 @@ const Points = (props) => {
 					<Route path={"/login/"}
 						element={<Login />}
 					/>
-
-					<Route path={"/profile/*"}
-						element={<ProfileContainer />}
-					/>
+					
+					<Route path="/profile" element={<ProfileContainer />}>
+        		<Route path=":userId" element={<ProfileContainer />} />
+      		</Route>
 s
 					<Route path="/dialogs/"
 						element={<Dialogs store={props.store} />}

@@ -13,8 +13,10 @@ import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
 // --------------------------------------------------------------
 const HeaderStyle = styled.div`
 	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
 	padding: 15px 50px;
-	width: 100%;
 	background-color: ${({ theme }) => theme.neutral.neutral80};
 	z-index: 100;
 `
@@ -40,9 +42,9 @@ const WrapperToggleMenu = styled.div`
 	box-shadow: 0px -6px 15px 0px rgba(27, 27, 27, 0.2);
 `
 const DescriptionToggleMenu = styled(Description)`
-	border-bottom: 1px solid ${({ theme }) => theme.neutral.neutral10};
-	margin-bottom: 8px;
-	padding: 2px 8px;
+	border-bottom: 1px solid ${({ theme }) => theme.neutral.neutral60};
+	margin-bottom: 5px;
+	padding: 8px;
 	width: 100%;
 	transition: ${({ theme }) => theme.transitions.transitionDefault};
 	cursor: pointer;
@@ -61,7 +63,6 @@ const DescriptionToggleMenu = styled(Description)`
 // --------------------------------------------------------------
 
 const Header = (props) => {
-	window.props = props
 	const [openUser, setOpenUser] = useState(false);
 
 	const toggleOpenUser = () => {

@@ -1,31 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile";
 import { getUserProfile, getUserStatus, setUserProfile, updateUserStatus, updateNewPostText, addPost} from "../../../redux/profile_reducer";
 import { compose } from "redux";
-import { withAuthRedirect, withRouter } from "../../../hoc/hoc";
+import { withRouter } from "../../../hoc/hoc";
+import {useNavigate, useParams } from "react-router-dom";
 
 
-class ProfileContainer extends React.Component {
+const ProfileContainer = (props) => {
+	const params = useParams()
+	const navigate = useNavigate();
 
-	componentDidMount() {
-		let userId = this.props.match ? this.props.match.params.userId : 22553
-		this.props.getUserProfile(userId)
-		this.props.getUserStatus(userId)
-	}
-	
-	render() {
-		return <Profile {...this.props} />
-	}
+	useEffect(() => {
+		let userId = params.userId
+		if (!userId) {
+			userId = props.authorizedUserId
+				if(!userId) {
+					navigate('/login')
+				}
+		}
+		props.getUserProfile(userId)
+		props.getUserStatus(userId)
+
+	}, [])
+	return(
+		<Profile {...props} />
+	)
+
 }
 
 let mapStateToProps = (state) => {
 
 	return {
-		id: state.auth.id,
-		status: state.profile.status,
 		userProfile: state.profile.userProfile,
-		posts: state.profile.PostData
+		status: state.profile.status,
+		posts: state.profile.PostData,
+		authorizedUserId: state.auth.id,
+		isAuth: state.auth.isAuth,
 	}
 }
 
@@ -33,5 +44,4 @@ let mapStateToProps = (state) => {
 export default compose(
 	withRouter,
 	connect(mapStateToProps, { setUserProfile, getUserProfile, getUserStatus, updateUserStatus, updateNewPostText, addPost}),
-	withAuthRedirect,
 )(ProfileContainer)

@@ -47,5 +47,5 @@ let mapStateToProps = (state) => {
 
 
 export default compose(
-	connect(mapStateToProps, { userFollow, setCurrentPage, followInProgress, getUsers, follow, unFollow }),
+	connect(mapStateToProps, { userFollow, setCurrentPage, followInProgress, getUsers, follow, unFollow })
 )(UsersContainer)

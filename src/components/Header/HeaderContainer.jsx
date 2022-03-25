@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { SetToggleMenu } from "../../redux/sidebar_reducer";
-import { getAuthUser, logout   } from "../../redux/auth_reducer";
+import { logout } from "../../redux/auth_reducer";
 import Header from "./Header";
 
 
@@ -25,4 +24,4 @@ let mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { SetToggleMenu, getAuthUser, logout })(HeaderContainer)
+export default connect(mapStateToProps, { logout })(HeaderContainer)

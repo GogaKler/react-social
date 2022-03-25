@@ -5,16 +5,16 @@ import AuthReducer from "./auth_reducer";
 // reducers 
 import DialogsReducer from "./dialogs_reducer";
 import ProfileReducer from "./profile_reducer";
-import SidebarReducer from "./sidebar_reducer";
 import UsersReducer from "./users_reducer";
+import AppReducer from './app_reducer';
 
 let reducers = combineReducers(
 	{
 		auth: AuthReducer,
+		app: AppReducer,
 		profile: ProfileReducer,
 		dialogs: DialogsReducer,
 		users: UsersReducer,
-		sidebar: SidebarReducer,
 	}
 );
 
