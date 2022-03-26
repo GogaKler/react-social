@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile";
-import { getUserProfile, getUserStatus, setUserProfile, updateUserStatus, updateNewPostText, addPost} from "../../../redux/profile_reducer";
+import { getUserProfile, getUserStatus, setUserProfile, updateUserStatus, updateNewPostText, addPost} from "../../redux/profile_reducer";
 import { compose } from "redux";
-import { withRouter } from "../../../hoc/hoc";
 import {useNavigate, useParams } from "react-router-dom";
 
 
@@ -42,6 +41,5 @@ let mapStateToProps = (state) => {
 
 
 export default compose(
-	withRouter,
 	connect(mapStateToProps, { setUserProfile, getUserProfile, getUserStatus, updateUserStatus, updateNewPostText, addPost}),
 )(ProfileContainer)

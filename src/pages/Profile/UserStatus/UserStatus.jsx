@@ -3,10 +3,10 @@ import { faPencil } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import { Button } from "../../../../components_styles/components/Button/Button";
-import { FlexContainer } from "../../../../components_styles/components/Containers/Containers";
-import { Input, InputWrapper } from "../../../../components_styles/components/Input/Input";
-import { Description } from "../../../../components_styles/components/Text/Text";
+import { Button } from "../../../components_style/components/Button/Button";
+import { FlexContainer } from "../../../components_style/components/Containers/Containers";
+import { Input, InputWrapper } from "../../../components_style/components/Input/Input";
+import { Description } from "../../../components_style/components/Text/Text";
 
 const statusColor = ({ theme }) => theme.neutral.neutral30
 const statusFontSize = '15px'

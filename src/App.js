@@ -1,9 +1,9 @@
-import Pages from './components/Pages/Pages'
+import Pages from './pages/Pages'
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./components_styles/GlobalStyles/GlobalStyles";
-import { darkTheme, lightTheme } from "./components_styles/Themes/Theme";
+import { GlobalStyles } from "./components_style/GlobalStyles/GlobalStyles";
+import { darkTheme, lightTheme } from "./components_style/Themes/Theme";
 import { initializeApp } from "./redux/app_reducer";
 import { PreloaderGhost } from './components/common/Preloaders/Preloaders';
 import HeaderContainer from './components/Header/HeaderContainer';

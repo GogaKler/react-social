@@ -1,8 +1,8 @@
 import styled from "styled-components/macro"
-import { PreloaderGhost } from '../../common/Preloaders/Preloaders';
-import { Container, FlexCol, FlexContainer } from '../../../components_styles/components/Containers/Containers';
-import { Title } from '../../../components_styles/components/Text/Text';
-import UserAvatar from '../../common/UserAvatar/UserAvatar';
+import { PreloaderGhost } from '../../components/common/Preloaders/Preloaders';
+import { Container, FlexCol, FlexContainer } from '../../components_style/components/Containers/Containers';
+import { Title } from '../../components_style/components/Text/Text';
+import UserAvatar from '../../components/common/UserAvatar/UserAvatar';
 import UsersStatus from './UserStatus/UserStatus';
 import Posts from './Posts/Posts';
 import ProfileMenu from "./ProfileMenu/ProfileMenu";

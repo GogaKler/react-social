@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { FlexContainer } from '../../../components_styles/components/Containers/Containers';
+import { FlexContainer } from '../../../components_style/components/Containers/Containers';
 import { NavLink } from 'react-router-dom';
 
 const HeaderNavLink = styled(NavLink)`

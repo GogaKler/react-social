@@ -4,9 +4,9 @@ import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import { FlexContainer, PositionContainer } from '../../components_styles/components/Containers/Containers';
+import { FlexContainer, PositionContainer } from '../../components_style/components/Containers/Containers';
 import { AppName } from '../common/AppName/AppName';
-import { Description } from '../../components_styles/components/Text/Text';
+import { Description } from '../../components_style/components/Text/Text';
 import { Search } from '../common/Search/Search';
 import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
 

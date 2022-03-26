@@ -1,14 +1,14 @@
 import styled from "styled-components/macro";
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import { Button } from "../../../../components_styles/components/Button/Button";
-import { FlexContainer, PositionContainer } from '../../../../components_styles/components/Containers/Containers';
-import { Description, Title } from "../../../../components_styles/components/Text/Text";
+import { Button } from "../../../components_style/components/Button/Button";
+import { FlexContainer, PositionContainer } from '../../../components_style/components/Containers/Containers';
+import { Description, Title } from "../../../components_style/components/Text/Text";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { keyframes } from "styled-components";
-import { Input, InputWrapper } from "../../../../components_styles/components/Input/Input";
-import { Search } from "../../../common/Search/Search";
+import { Input, InputWrapper } from "../../../components_style/components/Input/Input";
+import { Search } from "../../../components/common/Search/Search";
 import Post from "../Post/Post";
 
 

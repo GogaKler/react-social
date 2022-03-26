@@ -1,8 +1,8 @@
 import User from './User/User'
-import '../../../css/users-point.css'
+import '../../css/users-point.css'
 import { Container } from 'react-bootstrap'
-import { PreloaderGhost } from '../../common/Preloaders/Preloaders'
-import { AppName } from '../../common/AppName/AppName'
+import { PreloaderGhost } from '../../components/common/Preloaders/Preloaders'
+import { AppName } from '../../components/common/AppName/AppName'
 
 const Users = (props) => {
 

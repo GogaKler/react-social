@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { addMessageCreator, updateNewMessageTextCreator } from "../../../../../redux/dialogs_reducer";
+import { addMessageCreator, updateNewMessageTextCreator } from "../../../../redux/dialogs_reducer";
 import ChatFooter from "./ChatFooter";
 
 

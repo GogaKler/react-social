@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import userPhoto from './../../../../assets/images/user.jpg'
+import userPhoto from '../../../assets/images/user.jpg'
 
 const User = (props) => {
 	return (

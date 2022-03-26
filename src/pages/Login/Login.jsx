@@ -2,13 +2,13 @@ import { Field, Form, Formik } from "formik";
 import React from "react";
 import styled from 'styled-components';
 import * as yup from 'yup'
-import { AppName } from "../common/AppName/AppName";
-import { Description } from '../../components_styles/components/Text/Text'
-import { FlexContainer, PositionContainer } from "../../components_styles/components/Containers/Containers";
+import { Description } from '../../components_style/components/Text/Text'
+import { FlexContainer, PositionContainer } from "../../components_style/components/Containers/Containers";
 import { connect } from "react-redux";
 import { login } from "../../redux/auth_reducer";
 import { Navigate } from "react-router-dom";
-import { Title } from './../../components_styles/components/Text/Text';
+import { Title } from './../../components_style/components/Text/Text';
+import { AppName } from "../../components/common/AppName/AppName";
 
 
 const StyleText = styled.h1`

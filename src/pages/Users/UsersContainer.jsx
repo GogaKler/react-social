@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { setCurrentPage, userFollow, followInProgress, getUsers, follow, unFollow } from "../../../redux/users_reducer"
+import { setCurrentPage, userFollow, followInProgress, getUsers, follow, unFollow } from "../../redux/users_reducer"
 import Users from "./Users"
 import React from 'react';
 import { compose } from "redux";

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
-import { FlexContainer } from "../../../../components_styles/components/Containers/Containers";
-import { Description, Title } from "../../../../components_styles/components/Text/Text";
-import UserAvatar from "../../../common/UserAvatar/UserAvatar";
+import { FlexContainer } from "../../../components_style/components/Containers/Containers";
+import { Description, Title } from "../../../components_style/components/Text/Text";
+import UserAvatar from "../../../components/common/UserAvatar/UserAvatar";
 
 const PostWrapper = styled.div`
 	background: rgb(165,200,255);

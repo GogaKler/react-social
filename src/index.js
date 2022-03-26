@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 // Main Component
 import App from './App';
-import { darkTheme, lightTheme } from './components_styles/Themes/Theme';
+import { darkTheme, lightTheme } from './components_style/Themes/Theme';
 
 
 // Объявление переменной Ре-Рендера

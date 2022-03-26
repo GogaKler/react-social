@@ -1,6 +1,6 @@
 import styled from "styled-components/macro"
 import { NavLink } from 'react-router-dom';
-import { Container, FlexCol, FlexContainer } from "../../../../components_styles/components/Containers/Containers";
+import { Container, FlexCol, FlexContainer } from "../../../components_style/components/Containers/Containers";
 
 // Menu
 const MenuWrapper = styled.div`
