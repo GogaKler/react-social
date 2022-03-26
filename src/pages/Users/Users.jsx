@@ -1,8 +1,8 @@
 import User from './User/User'
 import '../../css/users-point.css'
-import { Container } from 'react-bootstrap'
 import { PreloaderGhost } from '../../components/Preloaders/Preloaders'
 import { AppName } from '../../components/AppName/AppName'
+import { Container } from '../../components_style/components/Containers/Containers'
 
 const Users = (props) => {
 
@@ -46,16 +46,8 @@ const Users = (props) => {
 		<div className='point__users'>
 			<Container>
 				<div className='users__main-content'>
-					<div className='users-header'>
-						<div className="search users__search">
-							<i className="icon-search bi bi-search"></i>
-							<input className="input-search" type="search" placeholder="Поиск.."></input>
-							<i className="icon-submit bi bi-arrow-right"></i>
-						</div>
-					</div>
 					<div className='users-middle'>
 						<div className='users-middle__header'>
-							<AppName />
 							<div className='users-middle__title'>
 								Список пользователей
 								<div className='pagination'>

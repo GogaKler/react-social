@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/Fonts/fonts.scss'
-import './css/global_styles.css';
-import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import store from "./redux/redux-store";
 import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";

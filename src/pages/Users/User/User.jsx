@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import userPhoto from '../../../assets/images/user.jpg'
+import { Button } from './../../../components_style/components/Button/Button';
 
 const User = (props) => {
 	return (
@@ -30,10 +31,10 @@ const User = (props) => {
 
 				<div className="user-follow">
 					{props.followed
-						? <button disabled={props.followProgress.some(id => id === props.id)} onClick={ () => { props.unFollow(props.id) } } 
-							className="button user-follow__button-unSubscribe">Удалить из друзей</button>
-						: <button disabled={props.followProgress.some(id => id === props.id)} onClick={ () => { props.follow(props.id) } } 
-							className="button user-follow__button-subscribe">Добавить в друзья</button>
+						? <Button transparent disabled={props.followProgress.some(id => id === props.id)} onClick={ () => { props.unFollow(props.id) } } 
+							className="button user-follow__button-unSubscribe">Удалить из друзей</Button>
+						: <Button transparent second disabled={props.followProgress.some(id => id === props.id)} onClick={ () => { props.follow(props.id) } } 
+							className="button user-follow__button-subscribe">Добавить в друзья</Button>
 					}
 				</div>
 			</div>
