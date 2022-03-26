@@ -1,4 +1,4 @@
-import Points from "./components/Points/Points";
+import Pages from './components/Pages/Pages'
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
@@ -29,7 +29,7 @@ export const App = (props) => {
 			<ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
 				<GlobalStyles />
 				<HeaderContainer switchTheme={switchTheme} theme={theme} />
-				<Points  switchTheme={switchTheme} theme={theme} store={props.store} />
+				<Pages switchTheme={switchTheme} theme={theme} store={props.store} />
 			</ThemeProvider>
 		</main>
 	)

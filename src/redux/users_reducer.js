@@ -1,4 +1,4 @@
-import { followApi, usersApi } from "../api/api"
+ import { followApi, usersApi } from "../api/api"
 
 const USER_FOLLOW = 'USER_FOLLOW'
 const SET_USERS = "SET_USERS"

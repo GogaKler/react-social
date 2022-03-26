@@ -9,7 +9,7 @@ import './../../css/login-point.css'
 import './../../css/profile-point.css'
 import Login from '../Login/Login';
 
-const Points = (props) => {
+const Pages = (props) => {
 	return (
 			<section className="point" >
 				<Routes>
@@ -35,4 +35,4 @@ s
 	)
 }
 
-export default Points;
+export default Pages;
