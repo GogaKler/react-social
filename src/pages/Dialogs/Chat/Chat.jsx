@@ -1,6 +1,7 @@
 import ChatHeader from "./ChatHeader/ChatHeader";
 import MessageList from "./MessageList/MessageList";
 import ChatFooterContainer from "./ChatFooter/ChatFooterContainer";
+import { connect } from 'react-redux';
 
 const Chat = (props) => {
 	return (
@@ -8,9 +9,7 @@ const Chat = (props) => {
 
 			<ChatHeader />
 
-			<MessageList 
-			store = {props.store}
-			/>
+			<MessageList {...props}/>
 
 			<ChatFooterContainer />
 
@@ -18,4 +17,11 @@ const Chat = (props) => {
 	)
 }
 
-export default Chat;
+let mapStateToProps = (state) => {
+	return{
+		FirstMessages: state.dialogs.Messages.FirstMessages,
+		LastMessages: state.dialogs.Messages.LastMessages
+	}
+}
+
+export default connect(mapStateToProps,{})(Chat);

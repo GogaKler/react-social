@@ -1,5 +1,5 @@
-import preloaderGhost from '../../../assets/preloaders/preloaderGhost.gif'
-import { FlexContainer } from '../../../components_style/components/Containers/Containers'
+import preloaderGhost from '../../assets/preloaders/preloaderGhost.gif'
+import { FlexContainer } from '../../components_style/components/Containers/Containers'
 
 export const PreloaderGhost = (props) => {
 	return (

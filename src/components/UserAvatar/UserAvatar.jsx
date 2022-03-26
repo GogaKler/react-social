@@ -1,5 +1,5 @@
 import styled from "styled-components/macro"
-import userUndefiend from '../../../assets/images/user.jpg'
+import userUndefiend from '../../assets/images/user.jpg'
 import { connect } from 'react-redux'
 
 

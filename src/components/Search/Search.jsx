@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FlexContainer } from '../../../components_style/components/Containers/Containers';
+import { FlexContainer } from '../../components_style/components/Containers/Containers';
 
 const SearchWrapper = styled.div`
 	padding: 5px 10px;

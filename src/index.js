@@ -18,12 +18,9 @@ import { darkTheme, lightTheme } from './components_style/Themes/Theme';
 ReactDOM.render(
 	<BrowserRouter>
 		<Provider store={store} >
-			<App store={store} />
+			<App />
 		</Provider>
 	</BrowserRouter>, document.getElementById('root')
 );
-
-window.darkTheme = darkTheme;
-window.darkTheme = lightTheme;
 
 

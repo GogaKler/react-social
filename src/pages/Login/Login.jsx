@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { login } from "../../redux/auth_reducer";
 import { Navigate } from "react-router-dom";
 import { Title } from './../../components_style/components/Text/Text';
-import { AppName } from "../../components/common/AppName/AppName";
+import { AppName } from "../../components/AppName/AppName";
 
 
 const StyleText = styled.h1`

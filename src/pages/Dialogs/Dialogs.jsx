@@ -8,9 +8,7 @@ const Dialogs = (props) => {
 	return (
 		<div className='point__dialogs'>
 			<DialogsList />
-			<Chat
-				store = {props.store}
-			 />
+			<Chat />
 		</div>
 	)
 }

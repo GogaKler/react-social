@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { keyframes } from "styled-components";
 import { Input, InputWrapper } from "../../../components_style/components/Input/Input";
-import { Search } from "../../../components/common/Search/Search";
+import { Search } from "../../../components/Search/Search";
 import Post from "../Post/Post";
 
 
