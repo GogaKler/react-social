@@ -18,30 +18,30 @@ export const App = (props) => {
 
 	useEffect(() => {
 		props.initializeApp();
-	}, [])
+	}, [props])
 
-	if (!props.initialized){
+	if (!props.initialized) {
 		return (
 			<PreloaderGhost />
 		)
 	}
 	return (
-		<main>
-			<ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+		<ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+			<main>
 				<GlobalStyles />
 				<HeaderContainer switchTheme={switchTheme} theme={theme} />
 				{Routes}
-			</ThemeProvider>
-		</main>
+			</main>
+		</ThemeProvider>
 	)
 }
 
 const mapStateToProps = (state) => {
-	return{
+	return {
 		initialized: state.app.initialized
 	}
 }
 
-export default connect(mapStateToProps, {initializeApp})(App);
+export default connect(mapStateToProps, { initializeApp })(App);
 
 
