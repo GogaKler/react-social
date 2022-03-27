@@ -12,8 +12,8 @@ line-height: ${({lineH}) => lineH || ''};
 white-space: ${({space}) => space || ''};
 `
 export const Description = styled.div`
-	font-size: ${({FontSize}) => FontSize || ''};
-	font-style: ${({FontStyle}) => FontStyle || ''};
+	font-size: ${({fontSize}) => fontSize || ''};
+	font-style: ${({fontStyle}) => fontStyle || ''};
 	color:${({textColor}) => textColor ? textColor : ({theme}) => theme.neutral.neutral10};
 	font-weight: ${({fontWeight}) => fontWeight || ''};
 	line-height: ${({lineH}) => lineH || ''};

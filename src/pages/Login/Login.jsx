@@ -90,11 +90,6 @@ const Login = (props) => {
 									<Description margin='0 0 0 5px'>Запомнить меня</Description>
 								</FlexContainer>
 							</label>
-							<button
-								type="submit"
-								disabled={!isValid && !dirty}
-								className='login__button button'
-							>Войти</button>
 
 						</Form>
 					)}

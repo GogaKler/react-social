@@ -1,5 +1,5 @@
 import styled from "styled-components/macro"
-import { PreloaderGhost } from '../../components/Preloaders/Preloaders';
+import { PreloaderGhostPage } from '../../components/Preloaders/Preloaders';
 import { Container, FlexCol, FlexContainer } from '../../components_style/components/Containers/Containers';
 import { Title } from '../../components_style/components/Text/Text';
 import UserAvatar from '../../components/UserAvatar/UserAvatar';
@@ -29,10 +29,7 @@ const Profile = (props) => {
 
 	if (!props.userProfile) {
 		return (
-			<div className="loadingPage">
-				<PreloaderGhost />
-				<div className="loadingPage__text">Загрузка...</div>
-			</div>
+			<PreloaderGhostPage />
 		)
 	}
 	return (

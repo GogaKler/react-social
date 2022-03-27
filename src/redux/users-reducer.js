@@ -64,7 +64,7 @@ export const followInProgress = (inProgress, userId) => ({ type: FOLLOW_IN_PROGR
 
 
 // Thunks
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (currentPage, pageSize) => {
 	return (dispatch) => {
 		dispatch(preloaderIsFetching(true)); // Начало загрузки preloader
 		dispatch(setCurrentPage(currentPage));

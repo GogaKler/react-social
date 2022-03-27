@@ -25,8 +25,8 @@ export const FlexContainer = styled.div`
 	flex: ${({sFlex}) => sFlex || ''};
 	margin: ${({margin}) => margin || 0 };
 	padding: ${({padding}) => padding || 0 };
-	width: ${({sWidth}) => sWidth || ''};
-	height: ${({sHeight}) => sHeight || ''};
+	width: ${({width}) => width || ''};
+	height: ${({height}) => height || ''};
 	cursor: ${({cursor}) => cursor || ''};
 `
 export const FlexCol = styled.div`

@@ -4,8 +4,8 @@ import AuthReducer from "./auth_reducer";
 
 // reducers 
 import DialogsReducer from "./dialogs_reducer";
-import ProfileReducer from "./profile_reducer";
-import UsersReducer from "./users_reducer";
+import ProfileReducer from "./profile-reducer";
+import UsersReducer from "./users-reducer";
 import AppReducer from './app_reducer';
 
 let reducers = combineReducers(
