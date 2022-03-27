@@ -21,7 +21,7 @@ const ProfileContainer = (props) => {
 		props.getUserProfile(userId)
 		props.getUserStatus(userId)
 
-	}, [navigate, params.userId])
+	}, [params.userId]) 
 	return(
 		<Profile {...props} />
 	)

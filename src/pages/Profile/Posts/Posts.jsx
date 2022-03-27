@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { Form, Formik } from "formik";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button } from "../../../components_style/components/Button/Button";
 import { FlexContainer, PositionContainer } from '../../../components_style/components/Containers/Containers';
 import { Description, Title } from "../../../components_style/components/Text/Text";
@@ -44,7 +44,7 @@ const NewPostHeaderFlex = styled(FlexContainer)`
 	padding-bottom: 10px;
 `
 
-const Posts = (props) => {
+const Posts = React.memo((props) => {
 	const [editMode, setEditMode] = useState(false)
 	const toggleMode = () => {
 		!editMode ? setEditMode(true) : setEditMode(false)
@@ -58,6 +58,7 @@ const Posts = (props) => {
 		props.addPost(value.title, value.desc)
 		toggleMode();
 	}
+	console.log('render')
 	return (
 		<>
 			<PositionContainer pos='relative'>
@@ -111,6 +112,6 @@ const Posts = (props) => {
 			<Post posts={props.posts} name={props.name} />
 		</>
 	);
-}
+})
 
 export default Posts;
