@@ -44,7 +44,7 @@ const UsersStatus = (props) => {
 				?
 				<StatusWrapper marginLeft='5px'>
 					<FlexContainer justify='space-between'>
-						<Description FontStyle={statusFontStyle} textColor={statusColor} onDoubleClick={toggleStatus} FontSize={statusFontSize}>{props.status}</Description>
+						<Description fontStyle={statusFontStyle} textColor={statusColor} onDoubleClick={toggleStatus} fontSize={statusFontSize}>{props.status}</Description>
 						<Button transparent type='submit' onClick={toggleStatus}>
 							<FontAwesomeIcon icon={faPencil} />
 						</Button>
@@ -52,29 +52,26 @@ const UsersStatus = (props) => {
 					</FlexContainer>
 				</StatusWrapper>
 				:
-				<>
-						<Formik initialValues={StatusValue} onSubmit={onSubmit} >
-							{({ values, handleChange, handleBlur, handleSubmit }) => (
-								<StatusWrapper>
-									<Form onSubmit={handleSubmit}>
-										<FlexContainer justify='space-between'>
-											<InputWrapper margin='0 10px 0 0'>
-												<StatusInput
-													name='status' onChange={handleChange}
-													onBlur={handleBlur} autoFocus={true}
-													value={values.status}
-												/>
-											</InputWrapper>
-											<Button type='submit' >
-												<FontAwesomeIcon icon={faPencil} />
-											</Button>
-										</FlexContainer>
-									</Form>
-								</StatusWrapper>
-							)}
-						</Formik>
-				</>
-
+				<Formik initialValues={StatusValue} onSubmit={onSubmit} >
+					{({ values, handleChange, handleBlur, handleSubmit }) => (
+						<StatusWrapper>
+							<Form onSubmit={handleSubmit}>
+								<FlexContainer justify='space-between'>
+									<InputWrapper margin='0 10px 0 0'>
+										<StatusInput
+											name='status' onChange={handleChange}
+											onBlur={handleBlur} autoFocus={true}
+											value={values.status}
+										/>
+									</InputWrapper>
+									<Button type='submit' >
+										<FontAwesomeIcon icon={faPencil} />
+									</Button>
+								</FlexContainer>
+							</Form>
+						</StatusWrapper>
+					)}
+				</Formik>
 			}
 		</>
 	);
