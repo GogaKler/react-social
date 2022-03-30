@@ -58,7 +58,7 @@ const Posts = React.memo((props) => {
 		props.addPost(value.title, value.desc)
 		toggleMode();
 	}
-	console.log('render')
+	
 	return (
 		<>
 			<PositionContainer pos='relative'>

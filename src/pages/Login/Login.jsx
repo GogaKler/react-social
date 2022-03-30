@@ -7,8 +7,9 @@ import { FlexContainer, PositionContainer } from "../../components_style/compone
 import { connect } from "react-redux";
 import { login } from "../../redux/auth_reducer";
 import { Navigate } from "react-router-dom";
-import { Title } from './../../components_style/components/Text/Text';
+import { Title } from '../../components_style/components/Text/Text';
 import { AppName } from "../../components/AppName/AppName";
+import { Button } from './../../components_style/components/Button/Button';
 
 
 const StyleText = styled.h1`
@@ -22,12 +23,12 @@ const StyleText = styled.h1`
 `
 const WrapperLogin = styled(PositionContainer)`
 	padding: 10px;
-	background-color: ${({theme}) => theme.neutral.neutral80};
-	border-radius: ${({theme}) => theme.radius.radiusHard};
-	border: 1px solid ${({theme}) => theme.primary.primary90};
+	background-color: ${({ theme }) => theme.neutral.neutral80};
+	border-radius: ${({ theme }) => theme.radius.radiusHard};
+	border: 1px solid ${({ theme }) => theme.primary.primary90};
 `
 
-const Login = (props) => {
+const Login = ({isAuth, login}) => {
 
 	const ValidationSchema = yup.object().shape({
 		email: yup.string().typeError('Должно быть строкой').required('Обязательное поле'),
@@ -39,63 +40,64 @@ const Login = (props) => {
 		password: '',
 		rememberMe: false,
 	}
-	
-	if (props.isAuth === true ) return <Navigate to ='/profile' />
+
+	if (isAuth === true) return <Navigate to='/profile' />
 
 	return (
-		<>
-			<div className="login">
-				<WrapperLogin pos='absolute' right='400px' top='350px'>
-					<Title margin='0 0 5px 0'>Тестовые данные</Title>
-					<Description>Email: &nbsp;aestharm@gmail.com</Description>
-					<Description>Пароль: &nbsp;qwerty1234</Description>
-				</WrapperLogin>
-				<AppName size={'xxl'} margin='0 0 25px 0' />
-				<StyleText>Войдите в Учётную Запись</StyleText>
+		<div className="login">
+			<WrapperLogin pos='absolute' right='400px' top='350px'>
+				<Title margin='0 0 5px 0'>Тестовые данные</Title>
+				<Description>Email: &nbsp;aestharm@gmail.com</Description>
+				<Description>Пароль: &nbsp;qwerty1234</Description>
+			</WrapperLogin>
+			<AppName size={'xxl'} margin='0 0 25px 0' />
+			<StyleText>Войдите в Учётную Запись</StyleText>
 
-				<Formik
-					initialValues={LoginValues}
-					validateOnBlur
-					onSubmit={(value) => {props.login(value.email, value.password, value.rememberMe)}}
-					validationSchema={ValidationSchema}
-				>
-					{({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
-						<Form onSubmit={handleSubmit} className="login__form">
-							<div className="login__label-wrapper">
-								<label htmlFor='email' className="login__label">Email</label>
-								{touched.email && errors.email && <span className="login__error">{errors.email}</span>}
-							</div>
-							<Field className="login__input"
-								type='email'
-								name='email'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.email}
-							/>
+			<Formik
+				initialValues={LoginValues}
+				validateOnBlur
+				onSubmit={(value) => { login(value.email, value.password, value.rememberMe) }}
+				validationSchema={ValidationSchema}
+			>
+				{({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+					<Form onSubmit={handleSubmit} className="login__form">
+						<div className="login__label-wrapper">
+							<label htmlFor='email' className="login__label">Email</label>
+							{touched.email && errors.email && <span className="login__error">{errors.email}</span>}
+						</div>
+						<Field className="login__input"
+							type='email'
+							name='email'
+							onChange={handleChange}
+							onBlur={handleBlur}
+							value={values.email}
+						/>
 
-							<div className="login__label-wrapper">
-								<label htmlFor='password' className="login__label">Пароль</label>
-								{touched.password && errors.password && <span className="login__error">{errors.password}</span>}
-							</div>
-							<Field className="login__input"
-								type='password'
-								name='password'
-								onChange={handleChange}
-								onBlur={handleBlur}
-								value={values.password}
-							/>
-							<label>
-								<FlexContainer align='center'>
-									<Field type="checkbox" name="rememberMe" />
-									<Description margin='0 0 0 5px'>Запомнить меня</Description>
-								</FlexContainer>
-							</label>
-
-						</Form>
-					)}
-				</Formik>
-			</div>
-		</>
+						<div className="login__label-wrapper">
+							<label htmlFor='password' className="login__label">Пароль</label>
+							{touched.password && errors.password && <span className="login__error">{errors.password}</span>}
+						</div>
+						<Field className="login__input"
+							type='password'
+							name='password'
+							onChange={handleChange}
+							onBlur={handleBlur}
+							value={values.password}
+						/>
+						<label>
+							<FlexContainer align='center' margin='0 0 15px 0'>
+								<Field type="checkbox" name="rememberMe" />
+								<Description margin='0 0 0 5px'>Запомнить меня</Description>
+							</FlexContainer>
+						</label>
+						<Button md
+							type="submit"
+							disabled={!isValid && !dirty}
+						>Войти</Button>
+					</Form>
+				)}
+			</Formik>
+		</div>
 	);
 }
 
@@ -105,4 +107,4 @@ let mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {login})(Login)
+export default connect(mapStateToProps, { login })(Login)

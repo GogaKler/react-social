@@ -6,22 +6,22 @@ import { compose } from "redux";
 import {useNavigate, useParams } from "react-router-dom";
 
 
-const ProfileContainer = (props) => {
+const ProfileContainer = ({authorizedUserId, getUserProfile, getUserStatus, ...props}) => {
 	const params = useParams()
 	const navigate = useNavigate();
-	useEffect(() => {
 	
+	useEffect(() => {
 		let userId = params.userId
 		if (!userId) {
-			userId = props.authorizedUserId
+			userId = authorizedUserId
 				if(!userId) {
 					navigate('/login')
 				}
 		}
-		props.getUserProfile(userId)
-		props.getUserStatus(userId)
+		getUserProfile(userId)
+		getUserStatus(userId)
 
-	}, [params.userId]) 
+	}, [getUserProfile, getUserStatus, authorizedUserId, navigate, params.userId]) 
 	return(
 		<Profile {...props} />
 	)

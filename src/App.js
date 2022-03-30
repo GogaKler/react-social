@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components/macro";
 import { GlobalStyles } from "./components_style/GlobalStyles/GlobalStyles";
 import { darkTheme, lightTheme } from "./components_style/Themes/Theme";
 import { initializeApp } from "./redux/app_reducer";
@@ -8,29 +8,34 @@ import { PreloaderGhost } from './components/Preloaders/Preloaders';
 import HeaderContainer from './components/Header/HeaderContainer';
 import { useRoutes } from './routes';
 
+const AppWrapper = styled.div`
+	padding-top: 58px;
+`
 
-export const App = (props) => {
+export const App = ({initialized, initializeApp}) => {
 	const Routes = useRoutes();
 	const [theme, setTheme] = useState("dark");
 	const switchTheme = () => {
 		theme === "dark" ? setTheme("light") : setTheme("dark");
 	};
-
 	useEffect(() => {
-		props.initializeApp();
-	}, [props])
+		initializeApp();
+	}, [initializeApp])
 
-	if (!props.initialized) {
+	if (!initialized) {
 		return (
 			<PreloaderGhost />
 		)
 	}
+
 	return (
 		<ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
 			<main>
 				<GlobalStyles />
 				<HeaderContainer switchTheme={switchTheme} theme={theme} />
-				{Routes}
+				<AppWrapper>
+					{Routes}
+				</AppWrapper>
 			</main>
 		</ThemeProvider>
 	)

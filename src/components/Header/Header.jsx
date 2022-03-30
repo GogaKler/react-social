@@ -62,7 +62,7 @@ const DescriptionToggleMenu = styled(Description)`
 `
 // --------------------------------------------------------------
 
-const Header = (props) => {
+const Header = ({id, switchTheme, theme, logout}) => {
 	const [openUser, setOpenUser] = useState(false);
 
 	const toggleOpenUser = () => {
@@ -75,7 +75,7 @@ const Header = (props) => {
 				<FlexContainer align='center'>
 					<AppName margin='0 25px 0 0' />
 					<Search placeholder='Поиск...' margin='0 25px 0 0'/>
-					<HeaderNavigation id={props.id}/>
+					<HeaderNavigation id={id}/>
 				</FlexContainer>
 				<FlexContainer align='center' justify='space-around' onClick={toggleOpenUser} cursor='pointer'>
 					<IconProfileOnHeader icon={faCircleUser}/>
@@ -87,8 +87,8 @@ const Header = (props) => {
 				<PositionContainer pos='absolute' top='43px' right='45px'>
 					<WrapperToggleMenu>
 						<FlexContainer direction='column' align='flex-start'>
-							<DescriptionToggleMenu onClick={props.switchTheme}>Переключиться на &nbsp;<span>{props.theme === 'light' ? "Dark Theme" : "Light Theme"}</span></DescriptionToggleMenu>
-							<DescriptionToggleMenu onClick={props.logout}>Выйти</DescriptionToggleMenu>
+							<DescriptionToggleMenu onClick={switchTheme}>Переключиться на &nbsp;<span>{theme === 'light' ? "Dark Theme" : "Light Theme"}</span></DescriptionToggleMenu>
+							<DescriptionToggleMenu onClick={logout}>Выйти</DescriptionToggleMenu>
 						</FlexContainer>
 					</WrapperToggleMenu>
 				</PositionContainer>}

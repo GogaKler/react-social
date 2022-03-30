@@ -1,12 +1,12 @@
 import User from './User/User'
 import '../../css/users-point.css'
 import { PreloaderGhost } from '../../components/Preloaders/Preloaders'
-import { AppName } from '../../components/AppName/AppName'
 import { Container } from '../../components_style/components/Containers/Containers'
+import Paginator from '../../components/Paginator/Paginator'
 
 const Users = (props) => {
 
-	let userElements = props.Users.map(el =>
+	const userElements = props.Users.map(el =>
 		<User
 			key={el.id}
 			id={el.id}
@@ -22,26 +22,7 @@ const Users = (props) => {
 		/>
 	)
 
-	let pages = []; // массив цифр в пагинации
 
-	let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize); // высчитываем количество нужных цифр
-
-	for (let i = 1; i <= pagesCount; i++) { // перебор тех самых цифр
-		if (pages.length < 10) { // условие, чтобы не было много цифр
-			pages.push(i); // пуш цифр
-		}
-	}
-
-	let pagesElements = pages.map(p => { // пагинация
-		return (
-			<span
-				key={p}
-				className={props.currentPage === p ? "pagination__selected" : undefined}
-				onClick={() => { props.onPageChanged(p) }}
-			>{p}</span>
-		)
-	})
-	
 	return (
 		<div className='point__users'>
 			<Container>
@@ -50,9 +31,12 @@ const Users = (props) => {
 						<div className='users-middle__header'>
 							<div className='users-middle__title'>
 								Список пользователей
-								<div className='pagination'>
-									{pagesElements}
-								</div>
+								<Paginator 
+									totalUsersCount={props.totalUsersCount}
+									pageSize={props.pageSize}
+									currentPage={props.currentPage}
+									onPageChanged={props.onPageChanged}
+								/>
 							</div>
 
 							{props.isFetching ? <PreloaderGhost /> : null}
@@ -60,7 +44,6 @@ const Users = (props) => {
 							<div className="users-wrapper">
 								{userElements}
 							</div>
-
 
 						</div>
 					</div>

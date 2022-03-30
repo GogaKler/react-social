@@ -2,7 +2,6 @@ import styled from "styled-components/macro"
 import { NavLink } from 'react-router-dom';
 import { Container, FlexCol, FlexContainer } from "../../../components_style/components/Containers/Containers";
 
-// Menu
 const MenuWrapper = styled.div`
 	margin-top: ${({ theme }) => theme.margins.marginTopBlock};
 	border-bottom: 1px solid ${({ theme }) => theme.neutral.neutral80};
@@ -23,7 +22,7 @@ const ProfileMenuLink = styled(NavLink)`
 	}
 `
 
-const ProfileMenu = (props) => {
+const ProfileMenu = () => {
 	return (
 		<MenuWrapper>
 			<Container>

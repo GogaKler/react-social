@@ -11,8 +11,6 @@ let initalState = {
 	}
 };
 
-
-
 const DialogsReducer = (state = initalState, action) => {
 	let stateCopy ={
 		...state,

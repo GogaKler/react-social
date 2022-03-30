@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
 		transition: ${({ theme }) => theme.transitions.transitionTheme};
 	}
 	main{
-		height: 100vh;
+		
 	}
 	li{
 		list-style-type: none;

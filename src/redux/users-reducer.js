@@ -1,4 +1,5 @@
- import { followApi, usersApi } from "../api/api"
+import { followApi, usersApi } from "../api/api"
+import { updateObjectInArray } from "../utility/object-helpers"
 
 const USER_FOLLOW = 'USER_FOLLOW'
 const SET_USERS = "SET_USERS"
@@ -21,12 +22,7 @@ const UsersReducer = (state = initalState, action) => {
 		case USER_FOLLOW:
 			return {
 				...state,
-				Users: state.Users.map(el => {  // Копирование с помощью map. Интдентично ( Users: [...state.User] )
-					if (el.id === action.userId) {
-						return { ...el, followed: !el.followed }
-					};
-					return el;
-				})
+				Users: updateObjectInArray(state.Users, action.userId, 'id')
 			}
 		case SET_USERS: {
 			return { ...state, Users: action.users }
@@ -41,13 +37,11 @@ const UsersReducer = (state = initalState, action) => {
 			return { ...state, isFetching: action.isFetching }
 		}
 		case FOLLOW_IN_PROGRESS: {
-			return { ...state, followProgress: action.inProgress 
-			?	[...state.followProgress,  action.userId]
-			// :	state.followProgress.filter(id => id !== action.userId)
-			: state.followProgress.filter( function(id) {
-				return id !== action.userId	
-			})
-		 }
+			return {
+				...state, followProgress: action.inProgress
+					? [...state.followProgress, action.userId]
+					: state.followProgress.filter((id) => id !== action.userId)
+			}
 		}
 		default:
 			return state
@@ -64,43 +58,29 @@ export const followInProgress = (inProgress, userId) => ({ type: FOLLOW_IN_PROGR
 
 
 // Thunks
-export const requestUsers = (currentPage, pageSize) => {
-	return (dispatch) => {
-		dispatch(preloaderIsFetching(true)); // Начало загрузки preloader
-		dispatch(setCurrentPage(currentPage));
-		usersApi.getUsers(currentPage, pageSize).then(data => { // Запрос на сервер
-			dispatch(preloaderIsFetching(false)); // Конец загрузки preloader
-			dispatch(setUsers(data.items)) // Set пользователей пришедших с сервера
-			dispatch(setTotalUsersCount(data.totalCount)) // Количество пользователей (число)
-		});
-	} 
+export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
+	dispatch(preloaderIsFetching(true));
+	dispatch(setCurrentPage(currentPage));
+	let data = await usersApi.getUsers(currentPage, pageSize)
+	dispatch(preloaderIsFetching(false));
+	dispatch(setUsers(data.items))
+	dispatch(setTotalUsersCount(data.totalCount))
 }
-export const follow = (userId) => {
-	return (dispatch) => {
-		dispatch(followInProgress(true, userId));
-		followApi.getFollow(userId).then(data => {
-			if (data.resultCode === 0) {
-				dispatch(userFollow(userId))
-			}
-			dispatch(followInProgress(false, userId));
-		})
+
+const follorUnFollowFlow = async (dispatch, userId, apiMethod) => {
+	dispatch(followInProgress(true, userId));
+	let data = await apiMethod(userId)
+
+	if (data.resultCode === 0) {
+		dispatch(userFollow(userId))
 	}
+	dispatch(followInProgress(false, userId));
 }
-export const unFollow = (userId) => {
-	return (dispatch) => {
-		dispatch(followInProgress(true, userId));
-		followApi.deleteFollow(userId).then(data => {
-			if (data.resultCode === 0) {
-				dispatch(userFollow(userId))
-			}
-			dispatch(followInProgress(false, userId));
-		})
-	}
+export const follow = (userId) => async (dispatch) => {
+	follorUnFollowFlow(dispatch, userId, followApi.getFollow.bind(followApi))
 }
-
-
-
-
-
+export const unFollow = (userId) => async (dispatch) => {
+	follorUnFollowFlow(dispatch, userId, followApi.deleteFollow.bind(followApi))
+}
 
 export default UsersReducer;
