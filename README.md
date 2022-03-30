@@ -26,7 +26,11 @@
 
 
 ## Установка  и запуск
+<<<<<<< HEAD
 Чтобы установить актуальную версию, сделайте переход на другую ветку
+=======
+Чтобы установить актуальную версию сделайте переход на другую ветку
+>>>>>>> react-social-with-styled-componets-RE_FACTORING
 
 `$ git checkout react-social-with-styled-componets-RE_FACTORING`
 
