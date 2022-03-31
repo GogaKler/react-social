@@ -1,5 +1,4 @@
 import User from './User/User'
-import '../../css/users-point.css'
 import { PreloaderGhost } from '../../components/Preloaders/Preloaders'
 import { Container } from '../../components_style/components/Containers/Containers'
 import Paginator from '../../components/Paginator/Paginator'

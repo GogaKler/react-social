@@ -4,6 +4,7 @@ import Users from "./Users"
 import React from 'react';
 import { compose } from "redux";
 import { getCurrentPage, getFollowProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers } from "../../redux/users-selectors";
+import './Users.css'
 
 class UsersContainer extends React.Component {
 

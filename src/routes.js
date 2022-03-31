@@ -3,14 +3,12 @@ import Dialogs from "./pages/Dialogs/Dialogs"
 import Login from "./pages/Login/Login"
 import ProfileContainer from "./pages/Profile/ProfileContainer"
 import UsersContainer from "./pages/Users/UsersContainer"
-import './css/login-point.css'
-import './css/profile-point.css'
 
 export const useRoutes = () => {
 	return (
 		<Routes>
 			<Route path={"/login/"} element={<Login />} />
-
+				
 			<Route path="/profile" element={<ProfileContainer />}>
 				<Route path=":userId" element={<ProfileContainer />} />
 			</Route>

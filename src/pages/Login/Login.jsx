@@ -10,7 +10,7 @@ import { Navigate } from "react-router-dom";
 import { Title } from '../../components_style/components/Text/Text';
 import { AppName } from "../../components/AppName/AppName";
 import { Button } from './../../components_style/components/Button/Button';
-
+import './Login.css'
 
 const StyleText = styled.h1`
 	width: 100%;

@@ -2,8 +2,6 @@ import styled from "styled-components/macro"
 import userUndefiend from '../../assets/images/user.jpg'
 import { connect } from 'react-redux'
 
-
-
 const UserAvatarWrapper = styled.div`
 	object-fit: cover;
 	margin: ${({ margin }) => margin || '0 5px'};
@@ -17,17 +15,18 @@ const Avatar = styled.img.attrs(({src}) => ({src: !src ? userUndefiend : src}))`
 	border: 1px solid ${({theme}) => theme.neutral.neutral30};
 `
 
-const UserAvatar = (props) => {
+const UserAvatar = ({size, margin, userAvatar}) => {
+
 	return (
-		<UserAvatarWrapper size={props.size} margin={props.margin}>
-			<Avatar src={props.userAvatar}/>
+		<UserAvatarWrapper size={size} margin={margin}>
+			<Avatar src={userAvatar}/>
 		</UserAvatarWrapper>
 	)
 }
 
 let mapStateToProps = (state) => {
 	return {
-		userAvatar: state.profile.userProfile.photos.large,
+		userAvatar: !state.profile.userProfile ? null : state.profile.userProfile.photos.large,
 	}
 }
-export default connect(mapStateToProps, {})(UserAvatar)
+export default connect(mapStateToProps)(UserAvatar)

@@ -89,6 +89,8 @@ const Posts = React.memo((props) => {
 												<Description>Описание</Description>
 												<InputWrapper margin='5px 0 10px 0'>
 													<Input
+														as = 'textarea'
+														rows = '3'
 														name='desc'
 														onChange={handleChange}
 														onBlur={handleBlur}

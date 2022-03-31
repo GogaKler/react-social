@@ -32,9 +32,9 @@ const User = (props) => {
 				<div className="user-follow">
 					{props.followed
 						? <Button transparent disabled={props.followProgress.some(id => id === props.id)} onClick={ () => { props.unFollow(props.id) } } 
-							className="button user-follow__button-unSubscribe">Удалить из друзей</Button>
+							>Удалить из друзей</Button>
 						: <Button transparent second disabled={props.followProgress.some(id => id === props.id)} onClick={ () => { props.follow(props.id) } } 
-							className="button user-follow__button-subscribe">Добавить в друзья</Button>
+							>Добавить в друзья</Button>
 					}
 				</div>
 			</div>
