@@ -32,6 +32,11 @@ export const profileApi = {
 	},
 	updateUserStatus(status){
 		return instance.put('profile/status', {status: status}).then(response => response.data) 
+	},
+	savePhoto(photoFile){
+		const formData = new FormData();
+		formData.append('image', photoFile)
+		return instance.put(`profile/photo`, formData).then(response => response.data)
 	}
 }
 export const followApi = { 

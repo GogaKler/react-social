@@ -6,6 +6,9 @@ import { Container, FlexCol, FlexContainer } from "../../components_style/compon
 import { Title } from "../../components_style/components/Text/Text";
 import DialogsSendForm from "./DialogsSendForm/DialogsSendForm";
 import { sendMessage } from './../../redux/dialogs_reducer';
+import { compose } from 'redux';
+import { withAuthRedirect } from './../../hoc/hoc';
+
 
 const DialogsWrapperFlex = styled(FlexContainer)`
 	margin-top: 20px;
@@ -79,4 +82,9 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(mapStateToProps, {sendMessage})(Dialogs);
+
+
+export default compose( 
+	withAuthRedirect, 
+	connect(mapStateToProps, {sendMessage}),
+)(Dialogs)
