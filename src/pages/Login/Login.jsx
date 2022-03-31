@@ -47,8 +47,8 @@ const Login = ({isAuth, login}) => {
 		<div className="login">
 			<WrapperLogin pos='absolute' right='400px' top='350px'>
 				<Title margin='0 0 5px 0'>Тестовые данные</Title>
-				<Description>Email: &nbsp;aestharm@gmail.com</Description>
-				<Description>Пароль: &nbsp;qwerty1234</Description>
+				<Description>Email: &nbsp;free@samuraijs.com</Description>
+				<Description>Пароль: &nbsp;free</Description>
 			</WrapperLogin>
 			<AppName size={'xxl'} margin='0 0 25px 0' />
 			<StyleText>Войдите в Учётную Запись</StyleText>
