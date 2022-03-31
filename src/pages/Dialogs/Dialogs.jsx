@@ -6,7 +6,6 @@ import { Container, FlexCol, FlexContainer } from "../../components_style/compon
 import { Title } from "../../components_style/components/Text/Text";
 import DialogsSendForm from "./DialogsSendForm/DialogsSendForm";
 import { sendMessage } from './../../redux/dialogs_reducer';
-import { useEffect } from 'react';
 
 const DialogsWrapperFlex = styled(FlexContainer)`
 	margin-top: 20px;
