@@ -6,12 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 import './assets/Fonts/fonts.scss'
 import App from './App';
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = ReactDOM.createRoot(container);
+
+root.render(
 	<BrowserRouter>
 		<Provider store={store} >
 			<App />
 		</Provider>
-	</BrowserRouter>, document.getElementById('root')
-);
-
-
+	</BrowserRouter>
+)
