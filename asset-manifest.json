@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/react-social/static/css/main.a74cb1ec.css",
-    "main.js": "/react-social/static/js/main.b9e8e329.js",
+    "main.js": "/react-social/static/js/main.9a00e15a.js",
     "static/js/624.8711bc0f.chunk.js": "/react-social/static/js/624.8711bc0f.chunk.js",
     "static/css/111.7a5ce8e7.chunk.css": "/react-social/static/css/111.7a5ce8e7.chunk.css",
     "static/js/111.78e9cc84.chunk.js": "/react-social/static/js/111.78e9cc84.chunk.js",
     "static/css/492.989a7ba2.chunk.css": "/react-social/static/css/492.989a7ba2.chunk.css",
-    "static/js/492.f95797cd.chunk.js": "/react-social/static/js/492.f95797cd.chunk.js",
+    "static/js/492.cc9feafe.chunk.js": "/react-social/static/js/492.cc9feafe.chunk.js",
     "static/js/132.66dc3201.chunk.js": "/react-social/static/js/132.66dc3201.chunk.js",
     "static/media/Roboto Thin Italic.svg": "/react-social/static/media/Roboto Thin Italic.49cc822f613b71310330.svg",
     "static/media/Roboto Light Italic.svg": "/react-social/static/media/Roboto Light Italic.a3f0a57c07ac2806f116.svg",
@@ -73,16 +73,16 @@
     "static/media/Roboto Thin.woff2": "/react-social/static/media/Roboto Thin.9dfb9319360d29069fb3.woff2",
     "index.html": "/react-social/index.html",
     "main.a74cb1ec.css.map": "/react-social/static/css/main.a74cb1ec.css.map",
-    "main.b9e8e329.js.map": "/react-social/static/js/main.b9e8e329.js.map",
+    "main.9a00e15a.js.map": "/react-social/static/js/main.9a00e15a.js.map",
     "624.8711bc0f.chunk.js.map": "/react-social/static/js/624.8711bc0f.chunk.js.map",
     "111.7a5ce8e7.chunk.css.map": "/react-social/static/css/111.7a5ce8e7.chunk.css.map",
     "111.78e9cc84.chunk.js.map": "/react-social/static/js/111.78e9cc84.chunk.js.map",
     "492.989a7ba2.chunk.css.map": "/react-social/static/css/492.989a7ba2.chunk.css.map",
-    "492.f95797cd.chunk.js.map": "/react-social/static/js/492.f95797cd.chunk.js.map",
+    "492.cc9feafe.chunk.js.map": "/react-social/static/js/492.cc9feafe.chunk.js.map",
     "132.66dc3201.chunk.js.map": "/react-social/static/js/132.66dc3201.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a74cb1ec.css",
-    "static/js/main.b9e8e329.js"
+    "static/js/main.9a00e15a.js"
   ]
 }
