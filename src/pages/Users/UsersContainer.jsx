@@ -1,19 +1,21 @@
-import { connect } from "react-redux"
-import { setCurrentPage, userFollow, followInProgress, requestUsers, follow, unFollow } from "../../redux/users-reducer"
-import Users from "./Users"
 import React from 'react';
+import { connect } from "react-redux";
 import { compose } from "redux";
+import { follow, followInProgress, requestUsers, setCurrentPage, unFollow, userFollow } from "../../redux/users-reducer";
 import { getCurrentPage, getFollowProgress, getIsFetching, getPageSize, getTotalUsersCount, getUsers } from "../../redux/users-selectors";
-import './Users.css'
+import Users from "./Users";
+import './Users.css';
 
 class UsersContainer extends React.Component {
 
 	componentDidMount() {
-		this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+		const {currentPage, pageSize} = this.props
+		this.props.requestUsers(currentPage, pageSize);
 	}
 
 	onPageChanged = (pageNumber) => {
-		this.props.requestUsers(pageNumber, this.props.pageSize);
+		const {pageSize} = this.props
+		this.props.requestUsers(pageNumber, pageSize);
 	}
 
 	render() {

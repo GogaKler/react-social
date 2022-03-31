@@ -31,11 +31,11 @@ const SearchSendIcon = styled(FontAwesomeIcon)`
 	}
 	
 `
-export const Search = (props) => {
+export const Search = ({margin, width, placeholder}) => {
 	return (
-		<SearchWrapper margin={props.margin} width={props.width}>
+		<SearchWrapper margin={margin} width={width}>
 			<FlexContainer align='center'>
-				<SearchInput placeholder={props.placeholder || 'Поиск..'} width={props.width}/>
+				<SearchInput placeholder={placeholder || 'Поиск..'} width={width}/>
 				<SearchSendIcon icon={faCaretRight} />
 			</FlexContainer>
 		</SearchWrapper>
