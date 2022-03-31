@@ -1,51 +1,34 @@
-const ADD_MESSAGE = 'ADD_MESSAGE';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT';
+const SEND_MESSAGE = 'dialogs/SEND_MESSAGE'
+
 
 let initalState = {
-	Messages: {
-		FirstMessages: [],
-		LastMessages: [
-			{ id: '1', text: 'Салам Алейкум, брат, как дела?', time: '10:00' }
+	messages: {
+		myMessages: [],
+		friendMessages: [
+			{ id: '1', text: 'Привет?' }
 		],
-		MessageText: '',
 	}
 };
 
 const DialogsReducer = (state = initalState, action) => {
 	let stateCopy ={
 		...state,
-		Messages: {...state.Messages}
+		messages: {...state.messages}
 	}
 	switch (action.type) {
-		case ADD_MESSAGE:
-			let newMessage = state.Messages.MessageText;
-			let NewMessage = {
-				id: '1',
-				text: newMessage,
-				time: '10:10',
+		case SEND_MESSAGE:
+			let newMessage = {
+				id: '2',
+				text: action.message	
 			}
-			stateCopy.Messages.FirstMessages.push(NewMessage);
-			stateCopy.Messages.MessageText = '';
-			return stateCopy;
-
-		case UPDATE_NEW_MESSAGE_TEXT:
-			stateCopy.Messages.MessageText = action.newMessage;
-			return stateCopy;
+			stateCopy.messages.myMessages.push(newMessage)
+			return stateCopy
 
 		default:
 			return state;
 	}
 }
 
-export const addMessageCreator = () => {
-	return {
-		type: ADD_MESSAGE,
-	}
-};
-export const updateNewMessageTextCreator = (newMessage) => {
-	return {
-		type: UPDATE_NEW_MESSAGE_TEXT,
-		newMessage: newMessage,
-	}
-};
+export const sendMessage = (message) => ({ type: SEND_MESSAGE, message })
+
 export default DialogsReducer;

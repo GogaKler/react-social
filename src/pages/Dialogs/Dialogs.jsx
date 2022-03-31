@@ -5,6 +5,8 @@ import UserAvatar from "../../components/UserAvatar/UserAvatar";
 import { Container, FlexCol, FlexContainer } from "../../components_style/components/Containers/Containers";
 import { Title } from "../../components_style/components/Text/Text";
 import DialogsSendForm from "./DialogsSendForm/DialogsSendForm";
+import { sendMessage } from './../../redux/dialogs_reducer';
+import { useEffect } from 'react';
 
 const DialogsWrapperFlex = styled(FlexContainer)`
 	margin-top: 20px;
@@ -39,7 +41,7 @@ const CurrentUserFlex = styled(FlexContainer)`
 	}
 `
 
-const Dialogs = ({userName}) => {
+const Dialogs = ({userName, sendMessage, myMessage}) => {
 
 	return (
 		<Container>
@@ -48,9 +50,9 @@ const Dialogs = ({userName}) => {
 					<LeftColumnWrapper>
 						<CurrentUserFlex align='center'>
 							<UserAvatar size='35px' margin='0 8px 0 0'/>
-							<Title FontSize='16px' fontWeight='400'>{userName}</Title>
+							<Title FontSize='16px' fontWeight='400'>Петька</Title>
 						</CurrentUserFlex>
-						Coming Soon...
+						
 					</LeftColumnWrapper>
 				</FlexCol>
 				<FlexCol flex='1 0 75%'>
@@ -73,8 +75,9 @@ const Dialogs = ({userName}) => {
 
 const mapStateToProps = (state) => {
 	return {
+		myMessage: state.dialogs.myMessages,
 		userName: state.auth.login
 	}
 }
 
-export default connect(mapStateToProps, null)(Dialogs);
+export default connect(mapStateToProps, {sendMessage})(Dialogs);
