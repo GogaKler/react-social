@@ -31,7 +31,7 @@ const Users = (props) => {
 							<div className='users-middle__title'>
 								Список пользователей
 								<Paginator 
-									totalUsersCount={props.totalUsersCount}
+									totalItemsCount={props.totalUsersCount}
 									pageSize={props.pageSize}
 									currentPage={props.currentPage}
 									onPageChanged={props.onPageChanged}
