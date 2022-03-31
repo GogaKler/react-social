@@ -1,22 +1,3 @@
-:root{
-	--dark-theme-light: #212121;
-	--dark-theme-dark: #181818;
-	--dark-theme-bgc: #0F0F0F;
-	--dark-theme-light-text: #a5a5a5;
-
-	--accent-color: #20232a;
-	--accent-rgba-opac005: rgba(255, 99, 90, 0.05);
-	--accent-colorLight: #282c34;
-	--accent-colorVeryLight: #b1b1b1;
-	--accent-colorText: #ff6363;
-	--accent-colorText50: #ff636354; 
-	--dark-light: #6d6d6d;
-	--transintion: 0.40s ease-out;
-	--transintion-fast: 0.2s ease-out;
-	--black-rgba: rgba(6, 6, 6, 0.3);
-}
-
-
 .login{
 	height: 100vh;
 	width: 450px;
@@ -57,7 +38,6 @@
 .login__label-wrapper .login__error{
 	color: rgba(255, 61, 61, 0.89);
 }
-
 .login__input{
 	font-size: 18px;
 	padding: 5px 15px;

@@ -1,26 +1,9 @@
-:root{
-	--dark-theme-light: #212121;
-	--dark-theme-dark: #181818;
-
-	--accent-color: #20232a;
-	--accent-rgba-opac005: rgba(255, 99, 90, 0.05);
-	--accent-colorLight: #282c34;
-	--accent-colorVeryLight: #b1b1b1;
-	--accent-colorText: #ff6363;
-	--accent-colorText50: #ff636350;
-	--dark-light: #6d6d6d;
-	--transintion: 0.40s ease-out;
-	--transintion-fast: 0.2s ease-out;
-	--black-rgba: rgba(6, 6, 6, 0.3);
-}
-
 .point__users{
 	color: #fff;
 }
 .users__main-content{
 	padding: 20px 0;
 }
-/*users__header*/
 .users-header{
 	padding: 20px 0;
 }
@@ -55,7 +38,6 @@
 	border-radius: 5px;
 	background-color: var(--accent-colorText50);
 }
-/*user*/
 .users-wrapper{
 	display: flex;
 	flex-wrap: wrap;
@@ -101,12 +83,10 @@
 .user-country{
 	margin-right: 10px;
 }
-/*actionAC*/
 .user-follow{
 	margin-top: auto;
 	margin-left: auto;
 }
-/*buttons*/
 .user-follow__button-subscribe{
 	font-weight: 600;
 	background-color: lightgreen;
@@ -124,7 +104,6 @@
 	color: #fff;
 	background-color: lightcoral;
 }
-/*user*/
 .currentUser-sendPost{
 	padding: 0 20px;
 	display: flex;

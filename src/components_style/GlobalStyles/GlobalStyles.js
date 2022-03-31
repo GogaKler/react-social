@@ -1,22 +1,23 @@
 import { createGlobalStyle } from 'styled-components/macro'
 
-// const fontFace = (name, src, fontWeight = 'normal', fontStyle = 'normal') => {
-// 	return `
-// 	@font-face{
-// 		font-family: "${name}";
-// 		src: url(${require('../../assets/Fonts/Roboto/' + src + '.ttf')}) format("truetype");
-// 		font-weight: ${fontWeight};
-// 		font-style: ${fontStyle};
-// 	}`;
-// }
-/* ${fontFace('Roboto', 'Roboto-Thin', 100, 'normal')}
-${fontFace('Roboto', 'Roboto-Light', 300, 'normal')}
-${fontFace('Roboto', 'Roboto-Regular', 'normal', 'normal')}
-${fontFace('Roboto', 'Roboto-Medium', 500, 'normal')}
-${fontFace('Roboto', 'Roboto-Bold', 700, 'normal')}
-${fontFace('Roboto', 'Roboto-Black', 900, 'normal')} */
 export const GlobalStyles = createGlobalStyle`
-
+	
+	:root{
+		--dark-theme-light: #212121;
+		--dark-theme-dark: #181818;
+		--dark-theme-bgc: #0F0F0F;
+		--dark-theme-light-text: #a5a5a5;
+		--accent-color: #20232a;
+		--accent-rgba-opac005: rgba(255, 99, 90, 0.05);
+		--accent-colorLight: #282c34;
+		--accent-colorVeryLight: #b1b1b1;
+		--accent-colorText: #ff6363;
+		--accent-colorText50: #ff636354; 
+		--dark-light: #6d6d6d;
+		--transintion: 0.40s ease-out;
+		--transintion-fast: 0.2s ease-out;
+		--black-rgba: rgba(6, 6, 6, 0.3);
+	}
 	::-webkit-scrollbar {
 		width: 7px; 
 		height: 8px; 
@@ -34,7 +35,6 @@ export const GlobalStyles = createGlobalStyle`
 	}
 	html{
 		overflow-x: hidden;
-		background-color: ${({ theme }) => theme.neutral.neutral90};
 	}
 	body{
 		overflow-x: hidden;
@@ -46,9 +46,6 @@ export const GlobalStyles = createGlobalStyle`
 		background-color: ${({ theme }) => theme.neutral.neutral90};
 		color: ${({ theme }) => theme.neutral.neutral10};
 		transition: ${({ theme }) => theme.transitions.transitionTheme};
-	}
-	main{
-		
 	}
 	li{
 		list-style-type: none;
