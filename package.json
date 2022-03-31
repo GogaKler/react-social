@@ -2,7 +2,7 @@
   "name": "react-course",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gogakler.github.io/react-social/",
+  "homepage": "https://gogakler.github.io/react-social",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "@fortawesome/free-regular-svg-icons": "^6.1.0",
@@ -13,7 +13,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.0",
     "formik": "^2.2.9",
-    "node-sass": "^7.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^7.2.6",
@@ -22,7 +21,6 @@
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "reselect": "^4.1.5",
-    "sass": "^1.49.10",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
