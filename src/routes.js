@@ -1,21 +1,28 @@
+import  React, { Suspense } from 'react';
 import { Route, Routes } from "react-router-dom"
-import Dialogs from "./pages/Dialogs/Dialogs"
-import Login from "./pages/Login/Login"
+import { PreloaderCirclePage } from './components/Preloaders/Preloaders';
 import ProfileContainer from "./pages/Profile/ProfileContainer"
-import UsersContainer from "./pages/Users/UsersContainer"
+
+
+const Dialogs = React.lazy(() => import('./pages/Dialogs/Dialogs'))
+const UsersContainer = React.lazy(() => import('./pages/Users/UsersContainer'))
+const Login = React.lazy(() => import('./pages/Login/Login'))
+
 
 export const useRoutes = () => {
 	return (
-		<Routes>
-			<Route path={"/login/"} element={<Login />} />
-				
-			<Route path="/profile" element={<ProfileContainer />}>
-				<Route path=":userId" element={<ProfileContainer />} />
-			</Route>
+		<Suspense fallback={<PreloaderCirclePage />}>
+			<Routes>
+				<Route path={"/login/"} element={<Login />} />
 
-			<Route path="/dialogs/" element={<Dialogs />} />
+				<Route path="/profile" element={<ProfileContainer />}>
+					<Route path=":userId" element={<ProfileContainer />} />
+				</Route>
 
-			<Route path="/users/" element={<UsersContainer />} />
-		</Routes>
+				<Route path="/dialogs/" element={<Dialogs />} />
+
+				<Route path="/users/" element={<UsersContainer />} />
+			</Routes>
+		</Suspense>
 	)
 }
