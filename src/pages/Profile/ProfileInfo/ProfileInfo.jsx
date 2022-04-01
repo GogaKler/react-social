@@ -7,6 +7,7 @@ import { FlexContainer } from "../../../components_style/components/Containers/C
 import { Input } from "../../../components_style/components/Input/Input"
 import { Title } from "../../../components_style/components/Text/Text"
 import UsersStatus from '../../../components/UserStatus/UserStatus';
+import { Button } from '../../../components_style/components/Button/Button';
 
 
 // LeftColumn -> UserInfo
@@ -80,7 +81,7 @@ const ProfileInfo = (props) => {
 					{editMode ?
 						<>
 							<ChangeAvatarWrapper>
-								<Input type={'file'} onChange={onMainPhotoSelected} />
+								<Input name='file' type='file' multiple id='input-file' onChange={onMainPhotoSelected} />
 								<FontAwesomeIconClose icon={faX} onClick={toggleEditMode} size='sm'/>
 							</ChangeAvatarWrapper>
 						</>
@@ -91,6 +92,7 @@ const ProfileInfo = (props) => {
 			<Title FontSize='30px'>{props.userProfile.fullName}</Title>
 			<UsersStatus />
 		</UserDescription>
+		<Button width='100%' lg neutral fontWeight='400'>Редактировать Профиль</Button>
 	</UserInfoWrapper>
 	);
 }

@@ -10,7 +10,7 @@ const defaultButton = {
 // sizes
 const xxlSize = ({ xxl }) => xxl && css`font-size: 15px; padding: 5px 6px;`
 const xlSize = ({ xl }) => xl && css`font-size: 15px; padding: 5px 6px;`
-const lgSize = ({ lg }) => lg && css`font-size: 15px; padding: 5px 6px;`
+const lgSize = ({ lg }) => lg && css`font-size: 16px; padding: 8px;`
 const mdSize = ({ md }) => md && css`font-size: 15px; padding: 5px 6px;`
 const smSize = ({ sm }) => sm && css`font-size: 13px; padding: 3px 6px;`
 // ButtonsThemes
@@ -37,7 +37,14 @@ const secondColorTransparent = css`
 			background-color: ${({ theme }) => theme.neutral.neutral80};
 		}
 `
-
+const neutralColor = ({neutral}) => neutral && css`
+	color: ${({ theme }) => theme.neutral.neutral10};
+	background-color: ${({ theme }) => theme.neutral.neutral80};
+	transition: ${({ theme }) => theme.transitions.transitionDefault};
+		&:hover{
+			background-color: ${({ theme }) => theme.neutral.neutral70};
+		}
+`
 export const Button = styled.button`
 	border: 0;
 	color: ${defaultButton.color};
@@ -69,6 +76,6 @@ export const Button = styled.button`
 	${smSize}
 	// colors
 	${(props) => props.transparent && props.second ? secondColorTransparent : secondColor}
-	
+	${neutralColor}
 
 `
