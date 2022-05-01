@@ -1,5 +1,3 @@
-
-
 export const updateObjectInArray = (items, itemId, objectPropName) => {
 	return items.map(e => { 
 		if (e[objectPropName] === itemId) {
