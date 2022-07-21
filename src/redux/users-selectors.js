@@ -3,7 +3,7 @@ import { createSelector } from "reselect"
 const getUsersSelector = (state) => state.users.Users
 
 export const getUsers = createSelector(getUsersSelector, (users) => {
-	return users.filter(u => true)
+	return users
 })
 
 export const getPageSize = (state) => state.users.pageSize

@@ -45,11 +45,11 @@ const AppLogo = styled(FontAwesomeIcon)`
 	${mdSize}
 	${smSize}
 `
-export const AppName = (props) => {
+export const AppName = ({margin, padding, size}) => {
 	return (
-		<FlexContainer align='center' padding={props.padding} margin={props.margin}>
-			<AppLogo icon={faCode} presets_size={props.size || DefaultSizePreset}/>
-			<AppTitle presets_size={props.size || DefaultSizePreset}>React&nbsp;<span>Social</span></AppTitle>
+		<FlexContainer align='center' padding={padding} margin={margin}>
+			<AppLogo icon={faCode} presets_size={DefaultSizePreset || size}/>
+			<AppTitle presets_size={DefaultSizePreset || size}>React&nbsp;<span>Social</span></AppTitle>
 		</FlexContainer>
 	)
 }
