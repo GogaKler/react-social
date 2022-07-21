@@ -66,8 +66,7 @@ export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
 	dispatch(setUsers(data.items))
 	dispatch(setTotalUsersCount(data.totalCount))
 }
-
-const follorUnFollowFlow = async (dispatch, userId, apiMethod) => {
+const followUnFollowFlow = async (dispatch, userId, apiMethod) => {
 	dispatch(followInProgress(true, userId));
 	let data = await apiMethod(userId)
 
@@ -77,10 +76,10 @@ const follorUnFollowFlow = async (dispatch, userId, apiMethod) => {
 	dispatch(followInProgress(false, userId));
 }
 export const follow = (userId) => async (dispatch) => {
-	follorUnFollowFlow(dispatch, userId, followApi.getFollow.bind(followApi))
+	await followUnFollowFlow(dispatch, userId, followApi.getFollow.bind(followApi))
 }
 export const unFollow = (userId) => async (dispatch) => {
-	follorUnFollowFlow(dispatch, userId, followApi.deleteFollow.bind(followApi))
+	await followUnFollowFlow(dispatch, userId, followApi.deleteFollow.bind(followApi))
 }
 
 export default UsersReducer;

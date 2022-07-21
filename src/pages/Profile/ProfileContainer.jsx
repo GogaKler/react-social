@@ -4,7 +4,7 @@ import Profile from "./Profile";
 import { getUserProfile, getUserStatus, setUserProfile, updateUserStatus, updateNewPostText, addPost} from "../../redux/profile-reducer";
 import { compose } from "redux";
 import {useNavigate, useParams } from "react-router-dom";
-import { savePhoto } from './../../redux/profile-reducer';
+import { savePhoto } from '../../redux/profile-reducer';
 
 
 const ProfileContainer = ({authorizedUserId, getUserProfile, getUserStatus, ...props}) => {
@@ -21,7 +21,7 @@ const ProfileContainer = ({authorizedUserId, getUserProfile, getUserStatus, ...p
 		}
 		getUserProfile(userId)
 		getUserStatus(userId)
-	}, [getUserProfile, getUserStatus, authorizedUserId, navigate, params.userId]) 
+	}, [getUserProfile, getUserStatus, authorizedUserId, navigate, params.userId])
 
 	return(
 		<Profile {...props} isOwner={!userId} />

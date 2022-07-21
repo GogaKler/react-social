@@ -1,4 +1,4 @@
-import styled from "styled-components/macro"
+ import styled from "styled-components/macro"
 import { PreloaderGhostPage } from '../../components/Preloaders/Preloaders';
 import { Container, FlexCol, FlexContainer } from '../../components_style/components/Containers/Containers';
 import Posts from './Posts/Posts';
